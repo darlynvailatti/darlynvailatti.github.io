@@ -110,7 +110,7 @@ export const SKILLS = [
         ]
     },
     {
-        "title": "📈 Data Analysis and Machine Learning",
+        "title": "⌗ Data Analysis and Machine Learning",
         "description": "Strong foundation in data analysis and machine learning, applying these skills to develop innovative solutions in various domains. Experience in developing platforms that use machine learning models for real-time data processing and decision-making.",
         "tools": [
             <DefaultIcon component={SiPandas} />,
