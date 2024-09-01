@@ -9,13 +9,13 @@ export function Skills() {
       <Grid2 container spacing={2} >
 
         {SKILLS.map((skill, index) => (
-          <Grid2 key={index} size={3}>
+          <Grid2 key={index} size={6}>
             <Paper variant="outlined" sx={{
               padding: 2,
               display: 'flex',
               height: '100%',
             }}>
-              <Stack spacing={1}>
+              <Stack spacing={2}>
                 <Typography variant="h6" fontWeight={"bold"}>{skill.title}</Typography>
                 <Typography variant="body2">{skill.description}</Typography>
 
@@ -35,6 +35,7 @@ export function Skills() {
                       <Chip label={tag} />
                     </Grid2>
                   ))}
+
                 </Grid2>
               </Stack>
             </Paper>

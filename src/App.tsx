@@ -11,6 +11,10 @@ function App() {
   const theme = createTheme({
     palette: {
       mode: darkMode ? 'dark' : 'light',
+      background: {
+        default: '#121212', // Custom background color
+        paper: '#1d1d1d', // Custom paper color
+      },
     },
     typography: {
       fontFamily: 'Roboto',

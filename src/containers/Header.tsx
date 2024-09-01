@@ -1,10 +1,12 @@
 import { Avatar, Box, Typography, Link, Stack, Grid2 } from "@mui/material";
-import { House, Email, LinkedIn } from "@mui/icons-material";
+import { House, Email } from "@mui/icons-material";
 import selfie from '../assets/images/selfie.png';
-import { CURRENT_LOCATION, EMAIL, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL } from "../common/data";
+import { CURRENT_LOCATION, EMAIL, GITHUB_URL, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL } from "../common/data";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export function Header() {
     return (
+
         <Stack spacing={2}>
             <Grid2 container alignItems="center">
 
@@ -27,13 +29,18 @@ export function Header() {
                             <Typography variant="h2" component="h2" fontWeight="bold">
                                 Darlyn Anderson Vailatti
                             </Typography>
-                            <Grid2 container alignItems={"center"}>
+                            <Grid2 container alignItems={"center"} spacing={2}>
                                 <Grid2>
                                     <Typography variant="h5">{JOB_TITLE}</Typography>
                                 </Grid2>
                                 <Grid2>
                                     <Link href={LINKEDIN_URL}>
-                                        <LinkedIn sx={{ ml: 1, mt: 1 }} />
+                                        <SiLinkedin size={20} />
+                                    </Link>
+                                </Grid2>
+                                <Grid2>
+                                    <Link href={GITHUB_URL}>
+                                        <SiGithub size={20} />
                                     </Link>
                                 </Grid2>
                             </Grid2>

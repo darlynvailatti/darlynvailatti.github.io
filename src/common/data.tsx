@@ -11,8 +11,9 @@ import compass_logo from '../assets/images/compass_logo.webp';
 export const JOB_TITLE = "💡 Problem Solver using Software"; // Replace with your job title
 export const EMAIL = "darlynvailatti@gmail.com"
 export const CURRENT_LOCATION = "Adelaide, South Australia"; // Replace with your current location
-export const HEADER_TEXT = "Every challenge has a solution through the power of software. With over a <b>decade of experience</b>, I've enhanced value creation and empowered business processes with curiosity and enthusiasm. Currently pursuing a Master's in Software Engineering with a focus on Machine Learning, I'm passionate about matching challenges with the right tools. Let's connect to discuss how my skills can drive innovation for your team!"
+export const HEADER_TEXT = "Every challenge has a solution through the power of software. With over a <b><u>decade of experience</u></b>, I've enhanced value creation and empowered business processes with curiosity and enthusiasm. Currently pursuing a Master's in Software Engineering with a focus on Machine Learning, I'm passionate about matching challenges with the right tools. Let's connect to discuss how my skills can drive innovation for your team!"
 export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
+export const GITHUB_URL = "https://github.com/darlynvailatti"
 
 export const EXPERIENCES = [
     {
