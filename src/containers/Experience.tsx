@@ -4,24 +4,18 @@ import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineDot from '@mui/lab/TimelineDot';
-import TimelineOppositeContent, {
-    timelineOppositeContentClasses,
-} from '@mui/lab/TimelineOppositeContent';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import { CalendarMonth, PinDrop } from "@mui/icons-material";
 import { EXPERIENCES } from "../common/data";
 
 
 export function Experience() {
     return (
-        <Stack spacing={2} textAlign={"left"}>
+        <Stack spacing={1} textAlign={"left"}>
             <Typography variant="h5" fontWeight="bold">Experience</Typography>
 
             {EXPERIENCES.map((experience, index) => {
-                return (<Timeline key={index} sx={{
-                    [`& .${timelineOppositeContentClasses.root}`]: {
-                        //   flex: 0.2,
-                    },
-                }}>
+                return (<Timeline key={index}>
                     <TimelineItem>
                         <TimelineSeparator>
                             <TimelineDot>
@@ -38,7 +32,7 @@ export function Experience() {
                                     <Link href={experience.website}>
                                         <Typography variant="h5" fontWeight={"bold"}>{experience.company}</Typography>
                                     </Link>
-                                    <Typography variant="body1">{experience.title}</Typography>
+                                    <Typography variant="body1" fontWeight={"bold"}>{experience.title}</Typography>
                                     <Typography variant="body2">{experience.description}</Typography>
 
                                     <Grid2 container spacing={1}>

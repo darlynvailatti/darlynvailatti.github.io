@@ -1,16 +1,15 @@
 import { Chip, Divider, Grid2, Link, Paper, Stack, Typography } from "@mui/material";
-import { EDUCATION_CHAPTERS } from "../common/data";
+import { PROJECTS } from "../common/data";
 
-export function Education() {
+export default function Projects() {
     return (
         <Stack spacing={2} textAlign={"left"}>
-
-            <Typography variant="h5" fontWeight="bold">Education</Typography>
+            <Typography variant="h5" fontWeight="bold">Projects</Typography>
 
             <Grid2 container spacing={2} >
-                {EDUCATION_CHAPTERS.map((chapter, index) => {
+                {PROJECTS.map((project, index) => {
 
-                    return <Grid2 key={index} size={4}>
+                    return <Grid2 key={index} size={6}>
 
                         <Paper variant="outlined" sx={{
                             padding: 2,
@@ -20,15 +19,16 @@ export function Education() {
                             <Stack spacing={2}>
                                 <Grid2 container spacing={2} justifyContent={"space-between"}>
                                     <Grid2>
-                                        <Link href={chapter.website}>
-                                            <Typography variant="h6" fontWeight={"bold"}>{chapter.title}</Typography>
+                                        <Link href={project.videoUrl}>
+                                            <Typography variant="h6" fontWeight={"bold"}>{project.title}</Typography>
                                         </Link>
                                     </Grid2>
                                 </Grid2>
+                                <Typography variant="body2" dangerouslySetInnerHTML={{ __html: project.description }} />
 
                                 <Divider />
                                 <Grid2 container spacing={1}>
-                                    {chapter.tags.map((tag, index) => (
+                                    {project.tags.map((tag, index) => (
                                         <Grid2 key={index}>
                                             <Chip label={tag} />
                                         </Grid2>
@@ -40,7 +40,6 @@ export function Education() {
                     </Grid2>
                 })}
             </Grid2>
-
         </Stack>
     );
 }

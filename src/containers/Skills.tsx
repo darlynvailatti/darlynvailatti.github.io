@@ -17,14 +17,12 @@ export function Skills() {
             }}>
               <Stack spacing={2}>
                 <Typography variant="h6" fontWeight={"bold"}>{skill.title}</Typography>
-                <Typography variant="body2">{skill.description}</Typography>
+                <Typography variant="body2" dangerouslySetInnerHTML={{ __html: skill.description }} />
 
-                <Grid2 container spacing={1}>
+                <Grid2 container spacing={2}>
                   {skill.tools.map((tool, index) => (
                     <Grid2 key={index}>
-
                       {tool}
-
                     </Grid2>
                   ))}
                 </Grid2>

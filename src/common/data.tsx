@@ -8,10 +8,10 @@ import rotesma_logo from '../assets/images/rotesma_logo.jpg';
 import cooperalfa_logo from '../assets/images/cooperalfa_logo.png';
 import compass_logo from '../assets/images/compass_logo.webp';
 
-export const JOB_TITLE = "💡 Problem Solver using Software"; // Replace with your job title
+export const JOB_TITLE = "💡 Software Engineer & Problem Solver"; // Replace with your job title
 export const EMAIL = "darlynvailatti@gmail.com"
 export const CURRENT_LOCATION = "Adelaide, South Australia"; // Replace with your current location
-export const HEADER_TEXT = "Every challenge has a solution through the power of software. With over a <b><u>decade of experience</u></b>, I've enhanced value creation and empowered business processes with curiosity and enthusiasm. Currently pursuing a Master's in Software Engineering with a focus on Machine Learning, I'm passionate about matching challenges with the right tools. Let's connect to discuss how my skills can drive innovation for your team!"
+export const HEADER_TEXT = "Every challenge has a solution through the power of software. With over <b>10+ years of software engineering experience</b>, I've enhanced value creation and empowered business processes with curiosity and enthusiasm. Currently pursuing a Master's in Software Engineering with a focus on <b>Machine Learning</b>, I'm passionate about matching challenges with the right tools. Let's connect to discuss how my skills can drive innovation for your team!"
 export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
 export const GITHUB_URL = "https://github.com/darlynvailatti"
 
@@ -114,11 +114,11 @@ export const SKILLS = [
         "title": "⌗ Data Analysis and Machine Learning",
         "description": "Strong foundation in data analysis and machine learning, applying these skills to develop innovative solutions in various domains. Experience in developing platforms that use machine learning models for real-time data processing and decision-making.",
         "tools": [
-            <DefaultIcon component={SiPandas} />,
-            <DefaultIcon component={SiPython} />,
-            <DefaultIcon component={SiNumpy} />,
-            <DefaultIcon component={SiScikitlearn} />,
-            <DefaultIcon component={SiJupyter} />,
+            <DefaultIcon component={SiPandas} name="Pandas"/>,
+            <DefaultIcon component={SiPython} name="Python"/>,
+            <DefaultIcon component={SiNumpy} name="Numpy"/>,
+            <DefaultIcon component={SiScikitlearn} name="Scikit Learn"/>,
+            <DefaultIcon component={SiJupyter} name="Jupyter Notebooks"/>,
         ],
         "tags": [
             "ML",
@@ -131,11 +131,11 @@ export const SKILLS = [
         "title": "⎌ Systems Integration and Automation",
         "description": "Proficient in integrating various business systems and automating workflows to improve efficiency and reduce operational costs. Capable of building custom solutions for complex system integrations and enabling smooth data flow across platforms.",
         "tools": [
-            <DefaultIcon component={SiPython} />,
-            <DefaultIcon component={FaJava} />,
-            <DefaultIcon component={SiCelery} />,
-            <DefaultIcon component={SiRabbitmq} />,
-            <DefaultIcon component={SiAmazonwebservices} />,
+            <DefaultIcon component={SiPython} name="Python"/>,
+            <DefaultIcon component={FaJava} name="Java"/>,
+            <DefaultIcon component={SiCelery} name="Celery"/>,
+            <DefaultIcon component={SiRabbitmq} name="RabbitMQ"/>,
+            <DefaultIcon component={SiAmazonwebservices} name="AWS"/>,
         ],
         "tags": [
             "REST",
@@ -143,6 +143,69 @@ export const SKILLS = [
             "SFTP",
             "Microservices",
             "Distributed Systems",
+        ]
+    }
+]
+
+export const PROJECTS = [
+    {
+        "title": "🧗 Climbing AR",
+        "description": "Gamify indoor climbing. Software and hardware development of a platform to gamify indoor climbing using machine learning through video capturing.",
+        "tags": ["Machine Learning", "React", "Python"],
+        "videoUrl": "https://www.youtube.com/watch?v=B4RD-9RwN6M",
+        "startDate": "2022",
+        "endDate": "2023"
+    },
+    {
+        "title": "⚡️ SpeedApp",
+        "description": "Athletic measurement platform. Software and Hardware development of a platform for collecting, managing and test sports teams with photoelectric sensors, with Python, Django, and other technologies ",
+        "tags": ["Python", "IoT", "Django"],
+        "videoUrl": "https://www.youtube.com/watch?v=gk41hN5K648",
+        "startDate": "2015",
+        "endDate": "2016"
+    }
+]
+
+export const EDUCATION_CHAPTERS = [
+    {
+        "title": "Master's in Software Engineering ML",
+        "institution": "Torrens Universtiry Australia",
+        "location": "Adelaide, South Australia",
+        "startDate": "2023",
+        "endDate": "2025",
+        "website": "https://www.torrens.edu.au/",
+        "tags": [
+            "Machine Learning",
+            "Data Analysis",
+            "Software Development",
+            "Research"
+        ]
+    },
+    {
+        "title": "Post-Graduate of Software Engineering",
+        "institution": "UNISINOS",
+        "location": "Porto Alegre, RS, Brazil",
+        "startDate": "2019",
+        "endDate": "2021",
+        "website": "https://www.unisinos.br/",
+        "tags": [
+            "Software Architecture",
+            "System Analysis",
+            "Project Management"
+        ]
+    },
+    {
+        "title": "Bachelor's in Information Systems ",
+        "institution": "UNOESC",
+        "location": "Chapecó, SC, Brazil ",
+        "startDate": "2014",
+        "endDate": "2017",
+        "website": "https://www.unoesc.edu.br/",
+        "tags": [
+            "Software Development",
+            "Data Sctructures",
+            "Programming Marathon",
+            "System Analysis"
         ]
     }
 ]
