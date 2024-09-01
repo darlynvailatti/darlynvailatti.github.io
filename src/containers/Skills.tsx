@@ -1,4 +1,4 @@
-import { Chip, Divider, Grid, Grid2, Paper, Stack, Typography } from "@mui/material";
+import { Chip, Divider, Grid2, Paper, Stack, Typography } from "@mui/material";
 import { SKILLS } from "../common/data";
 
 export function Skills() {

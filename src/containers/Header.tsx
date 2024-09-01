@@ -1,4 +1,4 @@
-import { Avatar, Box, Grid, Typography, Link, Button, Stack, Grid2 } from "@mui/material";
+import { Avatar, Box, Typography, Link, Stack, Grid2 } from "@mui/material";
 import { House, Email, LinkedIn } from "@mui/icons-material";
 import selfie from '../assets/images/selfie.png';
 import { CURRENT_LOCATION, EMAIL, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL } from "../common/data";

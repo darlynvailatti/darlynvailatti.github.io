@@ -6,7 +6,7 @@ import './index.css';
 
 function App() {
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode] = useState(true);
 
   const theme = createTheme({
     palette: {
@@ -16,10 +16,6 @@ function App() {
       fontFamily: 'Roboto',
     },
   });
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
     <div className="App">

@@ -1,4 +1,4 @@
-import { Box, Card, Chip, Grid2, Link, Stack, Typography } from "@mui/material";
+import { Card, Chip, Grid2, Link, Stack, Typography } from "@mui/material";
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';

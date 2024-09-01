@@ -2,7 +2,6 @@ import { Container, Divider, Stack } from "@mui/material";
 import { Header } from "../containers/Header";
 import { Skills } from "../containers/Skills";
 import { Experience } from "../containers/Experience";
-import { Education } from "../containers/Education";
 
 export function Home() {
   return (
@@ -19,8 +18,6 @@ export function Home() {
         <Experience/>
 
         <Divider/>
-
-        {/* <Education/> */}
       </Stack>
     </Container>
   );
