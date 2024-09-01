@@ -1,4 +1,4 @@
-import { SiAmazonalexa, SiAmazonwebservices, SiCelery, SiDatadog, SiDjango, SiDocker, SiGitlab, SiJenkins, SiJupyter, SiKubernetes, SiNumpy, SiPandas, SiPython, SiRabbitmq, SiReact, SiScikitlearn, SiSpring, SiTerraform, SiVuedotjs } from "react-icons/si";
+import { SiAmazonwebservices, SiCelery, SiDatadog, SiDjango, SiDocker, SiGitlab, SiJenkins, SiJupyter, SiKubernetes, SiNumpy, SiPandas, SiPython, SiRabbitmq, SiReact, SiScikitlearn, SiSpring, SiTerraform, SiVuedotjs } from "react-icons/si";
 import DefaultIcon from "../components/DefaultIcon";
 import { FaJava } from "react-icons/fa";
 import CustomIcon from "./CustomIcon";
