@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/darlyn/Desktop/code/personal/vailatti-folio/.github/deploy.yml"
+    }
+}

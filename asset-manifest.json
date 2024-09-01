@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/vailatti-folio/static/css/main.8ba0a2ad.css",
+    "main.js": "/vailatti-folio/static/js/main.13b77efa.js",
+    "static/js/453.dd7b6f82.chunk.js": "/vailatti-folio/static/js/453.dd7b6f82.chunk.js",
+    "static/media/selfie.png": "/vailatti-folio/static/media/selfie.354baffaa139df25990c.png",
+    "static/media/Roboto-Regular.ttf": "/vailatti-folio/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
+    "static/media/rotesma_logo.jpg": "/vailatti-folio/static/media/rotesma_logo.c98fee76a7eabede2b16.jpg",
+    "static/media/cooperalfa_logo.png": "/vailatti-folio/static/media/cooperalfa_logo.837d7361e2ab85db5d56.png",
+    "static/media/compass_logo.webp": "/vailatti-folio/static/media/compass_logo.8fe3266e8c9ac3177807.webp",
+    "index.html": "/vailatti-folio/index.html",
+    "main.8ba0a2ad.css.map": "/vailatti-folio/static/css/main.8ba0a2ad.css.map",
+    "main.13b77efa.js.map": "/vailatti-folio/static/js/main.13b77efa.js.map",
+    "453.dd7b6f82.chunk.js.map": "/vailatti-folio/static/js/453.dd7b6f82.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ba0a2ad.css",
+    "static/js/main.13b77efa.js"
+  ]
+}
