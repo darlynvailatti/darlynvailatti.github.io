@@ -10,6 +10,7 @@ import { FaPaperclip } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useTheme } from "@emotion/react";
+import header_background from '../assets/images/header_background.svg';
 
 const resume = require('../assets/documents/resume.pdf');
 
@@ -37,7 +38,7 @@ export function Header() {
 
                     <Grid2 container spacing={3} size={{
                         md: 12,
-                        xs: 12
+                        xs: 12,
                     }}>
 
                         <Grid2>
@@ -124,6 +125,37 @@ export function Header() {
 
                             </Grid2>
 
+                        </Grid2>
+
+                        <Grid2 size={{
+                            xs: 12,
+                            md: 3
+                        }}
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'flex-end',
+                                justifyContent: 'flex-end'
+                            }}>
+                            <style>
+                                {`
+                                @keyframes spin {
+                                    100% {
+                                        transform: rotate(360deg);
+                                    }
+                                }
+                                `}
+                            </style>
+                            <div style={{
+                                width: '70%',
+                                height: '100%',
+                                backgroundImage: `url(${header_background})`,
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover', // Optional: Ensures the image covers the entire div
+                                backgroundPosition: 'center', // Optional: Centers the image
+                                filter: colorMode.mode !== 'dark' ? 'invert(1)' : 'none', // Apply invert filter if dark mode
+                                animation: 'spin 10s linear infinite',
+                            }}>
+                            </div>
                         </Grid2>
 
                     </Grid2>
