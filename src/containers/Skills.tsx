@@ -6,10 +6,10 @@ export function Skills() {
     <Stack spacing={2} textAlign={"left"}>
       <Typography variant="h5" fontWeight="bold">Skills</Typography>
 
-      <Grid2 container spacing={2} >
+      <Grid2 container spacing={2}>
 
         {SKILLS.map((skill, index) => (
-          <Grid2 key={index} size={6}>
+          <Grid2 key={index} size={{xs: 12, md: 6, sm: 6}}>
             <Paper variant="outlined" sx={{
               padding: 2,
               display: 'flex',

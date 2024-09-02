@@ -6,26 +6,28 @@ import Projects from "../containers/Projects";
 import { Education } from "../containers/Education";
 
 export function Home() {
+
   return (
-    <Container maxWidth="lg" sx={{ padding: "30px"}}>
+    <Container maxWidth="lg" sx={{ padding: "30px" }}>
       <Stack spacing={2}>
+
         <Header />
 
-        <Divider/>
+        <Divider />
 
         <Skills />
 
-        <Divider/>
+        <Divider />
 
-        <Experience/>
+        <Experience />
 
-        <Divider/>
+        <Divider />
 
-        <Projects/>
+        <Projects />
 
-        <Divider/>
+        <Divider />
 
-        <Education/>
+        <Education />
       </Stack>
     </Container>
   );

@@ -1,6 +1,6 @@
 import { Avatar } from '@mui/material';
 
-export default function CustomIcon({ size = 50, src}: any) {
+export default function CustomIcon({ size = 40, src}: any) {
     return (
         <Avatar 
             src={src} 
@@ -9,6 +9,7 @@ export default function CustomIcon({ size = 50, src}: any) {
                 width: size, 
                 height: size, 
                 backgroundColor: "white",
+                border: 1,
             }} 
         />
     );

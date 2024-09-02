@@ -1,19 +1,40 @@
 import { SiAmazonwebservices, SiCelery, SiDatadog, SiDjango, SiDocker, SiGitlab, SiJenkins, SiJupyter, SiKubernetes, SiNumpy, SiPandas, SiPython, SiRabbitmq, SiReact, SiScikitlearn, SiSpring, SiTerraform, SiVuedotjs } from "react-icons/si";
 import DefaultIcon from "../components/DefaultIcon";
-import { FaJava } from "react-icons/fa";
+import { FaChartLine, FaCircleNotch, FaCode, FaJava, FaLayerGroup } from "react-icons/fa";
 import CustomIcon from "./CustomIcon";
 
 import loadsmart_logo from '../assets/images/loadsmart_logo.png';
 import rotesma_logo from '../assets/images/rotesma_logo.jpg';
 import cooperalfa_logo from '../assets/images/cooperalfa_logo.png';
 import compass_logo from '../assets/images/compass_logo.webp';
+import unisinos_logo from '../assets/images/unisinos_logo.png';
+import unoesc_logo from '../assets/images/unoesc_logo.png';
+import torrens_logo from '../assets/images/torrens_logo.jpg';
+import { Chip } from "@mui/material";
 
-export const JOB_TITLE = "💡 Software Engineer & Problem Solver"; // Replace with your job title
-export const EMAIL = "darlynvailatti@gmail.com"
-export const CURRENT_LOCATION = "Adelaide, South Australia"; // Replace with your current location
-export const HEADER_TEXT = "Every challenge has a solution through the power of software. With over <b>10+ years of software engineering experience</b>, I've enhanced value creation and empowered business processes with curiosity and enthusiasm. Currently pursuing a Master's in Software Engineering with a focus on <b>Machine Learning</b>, I'm passionate about matching challenges with the right tools. Let's connect to discuss how my skills can drive innovation for your team!"
 export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
+export const JOB_TITLE = "💡 Software Engineer & Problem Solver";
+export const EMAIL = "darlynvailatti@gmail.com"
+export const CURRENT_LOCATION = "Adelaide, South Australia";
+export const HEADER_TEXT = `Every challenge has a solution through the power of software. With over <b>10+ years of software engineering experience</b>, I've enhanced value creation and empowered business processes with <b>curiosity and enthusiasm</b>. Currently pursuing a Master's in Software Engineering with a focus on <b>Machine Learning</b>, I'm passionate about <b>matching challenges with the right tools</b>. Let's <a href='${LINKEDIN_URL}' class='MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xl5kxc-MuiTypography-root-MuiLink-root'>connect</a> to discuss how my skills can drive innovation for your team or business!`
 export const GITHUB_URL = "https://github.com/darlynvailatti"
+
+export const HEADER_TAGS = [
+    <Chip label="Software Engineering" icon={<FaCode size={25}/>}/>,
+    <Chip label="Full-Stack" icon={<FaLayerGroup size={20}/>}/>,
+    <Chip label="AWS" icon={<SiAmazonwebservices size={20}/>}/>,
+    <Chip label="Python" icon={<SiPython size={20}/>}/>,
+    <Chip label="Java" icon={<FaJava size={20}/>}/>,
+    <Chip label="Django" icon={<SiDjango size={20}/>}/>,
+    <Chip label="Spring" icon={<SiSpring size={20}/>}/>,
+    <Chip label="CI/CD" icon={<FaCircleNotch size={20}/>}/>,
+    <Chip label="Kubernetes" icon={<SiKubernetes size={20}/>}/>,
+    <Chip label="React" icon={<SiReact size={20}/>}/>,
+    <Chip label="Vue.js" icon={<SiVuedotjs size={20}/>}/>,
+    <Chip label="Data Analysis" icon={<SiPandas size={20}/>}/>,
+    <Chip label="Agile" icon={<FaChartLine size={20}/>}/>,
+
+]
 
 export const EXPERIENCES = [
     {
@@ -174,6 +195,7 @@ export const EDUCATION_CHAPTERS = [
         "startDate": "2023",
         "endDate": "2025",
         "website": "https://www.torrens.edu.au/",
+        "icon": <CustomIcon src={torrens_logo}/>,
         "tags": [
             "Machine Learning",
             "Data Analysis",
@@ -188,6 +210,7 @@ export const EDUCATION_CHAPTERS = [
         "startDate": "2019",
         "endDate": "2021",
         "website": "https://www.unisinos.br/",
+        "icon": <CustomIcon src={unisinos_logo}/>,
         "tags": [
             "Software Architecture",
             "System Analysis",
@@ -201,6 +224,7 @@ export const EDUCATION_CHAPTERS = [
         "startDate": "2014",
         "endDate": "2017",
         "website": "https://www.unoesc.edu.br/",
+        "icon": <CustomIcon src={unoesc_logo}/>,
         "tags": [
             "Software Development",
             "Data Sctructures",

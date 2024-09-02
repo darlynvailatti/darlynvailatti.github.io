@@ -9,7 +9,11 @@ export default function Projects() {
             <Grid2 container spacing={2} >
                 {PROJECTS.map((project, index) => {
 
-                    return <Grid2 key={index} size={6}>
+                    return <Grid2 key={index} size={{
+                        xs: 12,
+                        sm: 6,
+                        md: 6,
+                    }}>
 
                         <Paper variant="outlined" sx={{
                             padding: 2,
