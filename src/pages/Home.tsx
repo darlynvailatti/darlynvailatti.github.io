@@ -19,11 +19,11 @@ export function Home() {
 
         <Divider />
 
-        <Experience />
+        <Projects />
 
         <Divider />
 
-        <Projects />
+        <Experience />
 
         <Divider />
 

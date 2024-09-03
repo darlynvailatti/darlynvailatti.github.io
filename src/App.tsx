@@ -50,6 +50,15 @@ function App() {
             fontSize: '1rem',
           },
         },
+        components: {
+          MuiChip: {
+            styleOverrides: {
+              root: {
+                fontWeight: 'bold',
+              },
+            },
+          },
+        },
       }),
     [mode]
   );
