@@ -68,7 +68,7 @@ export function Experience() {
                                     marginRight: 0,
                                 }}>
                                     <Stack spacing={1}>
-                                        <Link href={experience.website}>
+                                        <Link href={experience.website}  target="_blank" rel="noopener noreferrer">
                                             <Typography variant="h5" fontWeight={"bold"}>{experience.company}</Typography>
                                         </Link>
                                         <Grid2 container spacing={1}>

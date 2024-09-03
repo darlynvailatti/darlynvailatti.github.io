@@ -83,7 +83,7 @@ export function Header() {
                                     xs: 1,
                                     md: 1
                                 }}>
-                                    <Link href={LINKEDIN_URL}>
+                                    <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                                         <SiLinkedin size={20} />
                                     </Link>
                                 </Grid2>
@@ -91,7 +91,7 @@ export function Header() {
                                     xs: 1,
                                     md: 1
                                 }}>
-                                    <Link href={GITHUB_URL}>
+                                    <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
                                         <SiGithub size={20} />
                                     </Link>
                                 </Grid2>
@@ -107,7 +107,7 @@ export function Header() {
                                     </Box>
                                 </Grid2>
                                 <Grid2>
-                                    <Link href={`mailto:${EMAIL}`} underline="hover" display="flex" alignItems="center">
+                                    <Link href={`mailto:${EMAIL}`} underline="hover" display="flex" alignItems="center"  target="_blank" rel="noopener noreferrer">
                                         <Email sx={{ mr: 1 }} />
                                         <Typography variant="body2">
                                             {EMAIL}

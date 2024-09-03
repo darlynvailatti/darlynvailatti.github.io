@@ -16,7 +16,7 @@ export default function Projects() {
                         md: 4,
                     }}>
 
-                        <Link href={project.videoUrl} underline="none" >
+                        <Link href={project.videoUrl} underline="none"  target="_blank" rel="noopener noreferrer">
                             <Card variant="outlined" sx={{
                                 minHeight: "100%",
                             }}>

@@ -61,7 +61,7 @@ export function Education() {
                                     marginRight: 0,
                                 }}>
                                     <Stack spacing={1}>
-                                        <Link href={chapter.website}>
+                                        <Link href={chapter.website}  target="_blank" rel="noopener noreferrer">
                                             <Typography variant="h5" fontWeight={"bold"}>{chapter.institution}</Typography>
                                         </Link>
                                         <Grid2 container spacing={1}>
