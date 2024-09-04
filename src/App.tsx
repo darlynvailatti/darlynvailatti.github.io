@@ -1,9 +1,8 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
-import { useState, createContext, useMemo, useEffect } from 'react';
+import { useState, createContext, useMemo } from 'react';
 import './App.css';
 import { Home } from './pages/Home';
 import './index.css';
-import { trackPageView } from './analytics';
 
 // Create a context for the theme mode
 export const ColorModeContext = createContext({ toggleColorMode: () => { }, mode: 'dark' });
@@ -11,11 +10,6 @@ export const ColorModeContext = createContext({ toggleColorMode: () => { }, mode
 
 function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('dark');
-  const location = window.location;
-
-  useEffect(() => {
-    trackPageView(location.pathname + location.search);
-  }, [location.pathname, location.search]);
 
   const colorMode = useMemo(
     () => ({

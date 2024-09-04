@@ -3,7 +3,7 @@ import { House, Email } from "@mui/icons-material";
 import selfie from '../assets/images/selfie.png';
 import { CURRENT_LOCATION, EMAIL, GITHUB_URL, HEADER_TAGS, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL } from "../common/data";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { ColorModeContext } from "../App";
 import ColorModeSwitcher from "../components/ColorModeSwitcher";
 import { FaPaperclip } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useTheme } from "@emotion/react";
 import header_background from '../assets/images/header_background.svg';
+import { trackEvent } from "../analytics";
 
 const resume = require('../assets/documents/resume.pdf');
 
@@ -18,6 +19,15 @@ export function Header() {
 
     const colorMode = useContext(ColorModeContext);
     const theme: any = useTheme()
+
+    const trackOnClick = useMemo(() => (label: string) => {
+        trackEvent({
+            action: 'click',
+            category: 'header',
+            label,
+            value: 1
+        })
+    }, [])
 
     return (
 
@@ -83,7 +93,7 @@ export function Header() {
                                     xs: 1,
                                     md: 1
                                 }}>
-                                    <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                                    <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("linkedin_link")}>
                                         <SiLinkedin size={20} />
                                     </Link>
                                 </Grid2>
@@ -91,7 +101,7 @@ export function Header() {
                                     xs: 1,
                                     md: 1
                                 }}>
-                                    <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                                    <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("github_link")}>
                                         <SiGithub size={20} />
                                     </Link>
                                 </Grid2>
@@ -107,7 +117,8 @@ export function Header() {
                                     </Box>
                                 </Grid2>
                                 <Grid2>
-                                    <Link href={`mailto:${EMAIL}`} underline="hover" display="flex" alignItems="center"  target="_blank" rel="noopener noreferrer">
+                                    <Link href={`mailto:${EMAIL}`} underline="hover" display="flex" alignItems="center"  target="_blank" rel="noopener noreferrer"
+                                        onClick={() => trackOnClick("email_link")}>
                                         <Email sx={{ mr: 1 }} />
                                         <Typography variant="body2">
                                             {EMAIL}
@@ -116,7 +127,7 @@ export function Header() {
                                 </Grid2>
                                 <Grid2 container>
                                     <FaPaperclip size={20} />
-                                    <Link href={resume}>
+                                    <Link href={resume} onClick={() => trackOnClick("resume_link")}>
                                         <Typography variant="body2">
                                             Resume
                                         </Typography>

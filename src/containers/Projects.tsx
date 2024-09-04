@@ -1,7 +1,18 @@
 import { Card, CardActionArea, CardContent, CardMedia, Divider, Grid2, Link, Stack, Typography } from "@mui/material";
 import { PROJECTS } from "../common/data";
+import { useMemo } from "react";
+import { trackEvent } from "../analytics";
 
 export default function Projects() {
+
+    const trackOnClick = useMemo(() => (label: string) => {
+        trackEvent({
+            action: 'click',
+            category: 'projects',
+            label,
+            value: 1
+        })
+    }, [])
 
     return (
         <Stack spacing={2} textAlign={"left"}>
@@ -16,7 +27,7 @@ export default function Projects() {
                         md: 4,
                     }}>
 
-                        <Link href={project.videoUrl} underline="none"  target="_blank" rel="noopener noreferrer">
+                        <Link href={project.videoUrl} underline="none"  target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick(`${project.title}`)}>
                             <Card variant="outlined" sx={{
                                 minHeight: "100%",
                             }}>
