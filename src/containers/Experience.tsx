@@ -38,15 +38,23 @@ export function Experience() {
                                 paddingLeft: 0,
                             }}>
                                 <Grid2 container spacing={1}>
-                                    <Typography variant={isMdOrLg ? "body2" : "caption"}
-                                        fontWeight={"bold"}>
-                                        <Chip label={experience.endDate} size="small" icon={<CalendarMonth/>}/>
-                                    </Typography>
-                                    <Typography
-                                        variant={isMdOrLg ? "body2" : "caption"}
-                                        fontWeight={"bold"}>
-                                            <Chip label={experience.startDate} size="small" icon={<CalendarMonth/>}/>
-                                    </Typography>
+
+                                    <Chip
+                                        label={
+                                            <Typography variant={isMdOrLg ? "body2" : "caption"}>{experience.endDate}</Typography>}
+                                        size="small" icon={<CalendarMonth />}
+                                    />
+
+
+                                    <Chip label={
+                                        <Typography
+                                            variant={isMdOrLg ? "body2" : "caption"}
+                                            fontWeight={"bold"}>
+                                            {experience.startDate}
+                                        </Typography>}
+                                        size="small" icon={<CalendarMonth />}
+                                    />
+
                                 </Grid2>
                             </TimelineOppositeContent>
                             <TimelineSeparator>
@@ -68,7 +76,7 @@ export function Experience() {
                                     marginRight: 0,
                                 }}>
                                     <Stack spacing={1}>
-                                        <Link href={experience.website}  target="_blank" rel="noopener noreferrer">
+                                        <Link href={experience.website} target="_blank" rel="noopener noreferrer">
                                             <Typography variant="h5" fontWeight={"bold"}>{experience.company}</Typography>
                                         </Link>
                                         <Grid2 container spacing={1}>

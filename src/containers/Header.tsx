@@ -168,7 +168,7 @@ export function Header() {
                                 marginRight: 1
                             }}>
                                 {HEADER_TAGS.map((tag, index) => {
-                                    return <Typography fontWeight={"bold"}>{tag}</Typography>
+                                    return <div key={index}>{tag}</div>
                                 })}
                             </Grid2>
                         </Marquee>
