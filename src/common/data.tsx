@@ -16,6 +16,7 @@ import sentiment_sense_image from '../assets/images/sentiment_sense_image.png';
 import { Chip } from "@mui/material";
 import { ThreeDRotation } from "@mui/icons-material";
 
+export const MY_NAME = "Darlyn Anderson Vailatti"
 export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
 export const JOB_TITLE = "💡 Software Engineer & Problem Solver";
 export const EMAIL = "darlynvailatti@gmail.com"

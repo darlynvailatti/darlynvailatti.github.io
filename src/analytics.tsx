@@ -1,7 +1,9 @@
 import ReactGA from 'react-ga4';
 
-const TRACKING_ID = "G-94GH8D0WXS";
-ReactGA.initialize(TRACKING_ID);
+if (!process.env.REACT_APP_ENV) {
+    const TRACKING_ID = "G-94GH8D0WXS";
+    ReactGA.initialize(TRACKING_ID);
+}
 
 export interface PageViewTrackingProps {
     page: string;

@@ -1,15 +1,17 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { Box, createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
 import { useState, createContext, useMemo } from 'react';
 import './App.css';
 import { Home } from './pages/Home';
 import './index.css';
+import ColorModeSwitcher from './components/ColorModeSwitcher';
 
 // Create a context for the theme mode
 export const ColorModeContext = createContext({ toggleColorMode: () => { }, mode: 'dark' });
 
 
 function App() {
-  const [mode, setMode] = useState<'light' | 'dark'>('dark');
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [mode, setMode] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
 
   const colorMode = useMemo(
     () => ({
@@ -67,6 +69,16 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 16,
+            right: 16,
+            zIndex: 1000,
+          }}
+        >
+          <ColorModeSwitcher onChange={() => colorMode.toggleColorMode()} />
+        </Box>
         <CssBaseline />
         <Home />
       </ThemeProvider>

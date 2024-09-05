@@ -41,7 +41,10 @@ export function Experience() {
 
                                     <Chip
                                         label={
-                                            <Typography variant={isMdOrLg ? "body2" : "caption"}>{experience.endDate}</Typography>}
+                                            <Typography variant={isMdOrLg ? "body2" : "caption"}
+                                                fontWeight={"bold"}>
+                                                {experience.endDate}
+                                            </Typography>}
                                         size="small" icon={<CalendarMonth />}
                                     />
 
