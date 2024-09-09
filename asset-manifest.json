@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a2867a95.css",
-    "main.js": "/static/js/main.006e0166.js",
+    "main.js": "/static/js/main.a35fc05a.js",
     "static/js/453.131c568b.chunk.js": "/static/js/453.131c568b.chunk.js",
     "static/media/speedapp_image.png": "/static/media/speedapp_image.6148ad70e848a5a4eeae.png",
     "static/media/climbing_image.png": "/static/media/climbing_image.4112588fe1fa670cf63f.png",
@@ -16,11 +16,11 @@
     "static/media/compass_logo.webp": "/static/media/compass_logo.8fe3266e8c9ac3177807.webp",
     "index.html": "/index.html",
     "main.a2867a95.css.map": "/static/css/main.a2867a95.css.map",
-    "main.006e0166.js.map": "/static/js/main.006e0166.js.map",
+    "main.a35fc05a.js.map": "/static/js/main.a35fc05a.js.map",
     "453.131c568b.chunk.js.map": "/static/js/453.131c568b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2867a95.css",
-    "static/js/main.006e0166.js"
+    "static/js/main.a35fc05a.js"
   ]
 }
