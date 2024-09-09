@@ -10,6 +10,7 @@ import Marquee from "react-fast-marquee";
 import { useTheme } from "@emotion/react";
 import { trackEvent } from "../analytics";
 import HeaderBackground from "./HeaderBackground";
+import ReactMarkdown from 'react-markdown';
 
 const resume = require('../assets/documents/resume.pdf');
 
@@ -245,8 +246,10 @@ export function Header() {
                         </Marquee>
                     </Grid2>
 
-
-                    <Typography variant="body1" mt={2} dangerouslySetInnerHTML={{ __html: HEADER_TEXT }} />
+                    <ReactMarkdown>
+                        {HEADER_TEXT}
+                    </ReactMarkdown>
+                    {/* <Typography variant="body1" mt={2} dangerouslySetInnerHTML={{ __html: HEADER_TEXT }} /> */}
 
                 </Stack>
 

@@ -21,7 +21,16 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
 export const JOB_TITLE = "💡 Software Engineer & Problem Solver";
 export const EMAIL = "darlynvailatti@gmail.com"
 export const CURRENT_LOCATION = "Adelaide, South Australia";
-export const HEADER_TEXT = `Every challenge has a solution through the power of software. With over <b>10+ years of software engineering experience</b>, I've enhanced value creation and empowered business processes with <b>curiosity and enthusiasm</b>. Currently pursuing a Master's in Software Engineering with a focus on <b>Machine Learning</b>, I'm passionate about <b>matching challenges with the right tools</b>. Let's <a href='${LINKEDIN_URL}' class='MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xl5kxc-MuiTypography-root-MuiLink-root'>connect</a> to discuss how my skills can drive innovation for your team or business!`
+export const HEADER_TEXT = `
+#### 📌 Every challenge has a solution through the power of software
+
+With over **10+ years of software engineering experience** ☔️, 
+I've enhanced value creation and empowered business processes with **curiosity** and **enthusiasm**. 
+Currently pursuing a Master's in Software Engineering with a focus on **Machine Learning**, 
+I'm passionate about **matching challenges with the right tools** 🛠️
+
+👉 Let's [connect](${LINKEDIN_URL}) to discuss how my skills can drive innovation for your team or business!`
+
 export const GITHUB_URL = "https://github.com/darlynvailatti"
 
 export const HEADER_TAGS = [
