@@ -1,6 +1,6 @@
 import { Avatar, Box, Typography, Link, Stack, Grid2, useMediaQuery } from "@mui/material";
 import { House, Email } from "@mui/icons-material";
-import selfie from '../assets/images/selfie.png';
+import selfie from '../assets/images/selfie.jpeg';
 import { CURRENT_LOCATION, EMAIL, GITHUB_URL, HEADER_TAGS, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL, MY_NAME } from "../common/data";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { useMemo } from "react";
