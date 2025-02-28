@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.a2867a95.css",
-    "main.js": "/static/js/main.c874997b.js",
+    "main.js": "/static/js/main.cabfbae8.js",
     "static/js/453.131c568b.chunk.js": "/static/js/453.131c568b.chunk.js",
     "static/media/speedapp_image.png": "/static/media/speedapp_image.6148ad70e848a5a4eeae.png",
     "static/media/climbing_image.png": "/static/media/climbing_image.4112588fe1fa670cf63f.png",
     "static/media/sentiment_sense_image.png": "/static/media/sentiment_sense_image.e9efa51dfe3b950c6389.png",
     "static/media/selfie.png": "/static/media/selfie.354baffaa139df25990c.png",
-    "static/media/resume.pdf": "/static/media/resume.7b2b13ece45cce53bc53.pdf",
+    "static/media/resume.pdf": "/static/media/resume.678d51235e78a79c21ac.pdf",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
     "static/media/rotesma_logo.jpg": "/static/media/rotesma_logo.c98fee76a7eabede2b16.jpg",
     "static/media/cooperalfa_logo.png": "/static/media/cooperalfa_logo.837d7361e2ab85db5d56.png",
@@ -16,11 +16,11 @@
     "static/media/compass_logo.webp": "/static/media/compass_logo.8fe3266e8c9ac3177807.webp",
     "index.html": "/index.html",
     "main.a2867a95.css.map": "/static/css/main.a2867a95.css.map",
-    "main.c874997b.js.map": "/static/js/main.c874997b.js.map",
+    "main.cabfbae8.js.map": "/static/js/main.cabfbae8.js.map",
     "453.131c568b.chunk.js.map": "/static/js/453.131c568b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2867a95.css",
-    "static/js/main.c874997b.js"
+    "static/js/main.cabfbae8.js"
   ]
 }
