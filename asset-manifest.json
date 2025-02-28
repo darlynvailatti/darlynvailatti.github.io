@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.a2867a95.css",
-    "main.js": "/static/js/main.cabfbae8.js",
+    "main.js": "/static/js/main.f1e34847.js",
     "static/js/453.131c568b.chunk.js": "/static/js/453.131c568b.chunk.js",
     "static/media/speedapp_image.png": "/static/media/speedapp_image.6148ad70e848a5a4eeae.png",
     "static/media/climbing_image.png": "/static/media/climbing_image.4112588fe1fa670cf63f.png",
     "static/media/sentiment_sense_image.png": "/static/media/sentiment_sense_image.e9efa51dfe3b950c6389.png",
-    "static/media/selfie.png": "/static/media/selfie.354baffaa139df25990c.png",
     "static/media/resume.pdf": "/static/media/resume.678d51235e78a79c21ac.pdf",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
     "static/media/rotesma_logo.jpg": "/static/media/rotesma_logo.c98fee76a7eabede2b16.jpg",
+    "static/media/selfie.jpeg": "/static/media/selfie.285ab44fbea17031f712.jpeg",
     "static/media/cooperalfa_logo.png": "/static/media/cooperalfa_logo.837d7361e2ab85db5d56.png",
     "static/media/torrens_logo.jpg": "/static/media/torrens_logo.c050a7c81f8311f0a226.jpg",
     "static/media/unoesc_logo.png": "/static/media/unoesc_logo.fb5d5410bab5d2daf83f.png",
     "static/media/compass_logo.webp": "/static/media/compass_logo.8fe3266e8c9ac3177807.webp",
     "index.html": "/index.html",
     "main.a2867a95.css.map": "/static/css/main.a2867a95.css.map",
-    "main.cabfbae8.js.map": "/static/js/main.cabfbae8.js.map",
+    "main.f1e34847.js.map": "/static/js/main.f1e34847.js.map",
     "453.131c568b.chunk.js.map": "/static/js/453.131c568b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2867a95.css",
-    "static/js/main.cabfbae8.js"
+    "static/js/main.f1e34847.js"
   ]
 }
