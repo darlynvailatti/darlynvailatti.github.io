@@ -1,4 +1,4 @@
-import { Container, Divider, Stack } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { Header } from "../containers/Header";
 import { Skills } from "../containers/Skills";
 import { Experience } from "../containers/Experience";
@@ -24,19 +24,11 @@ export function Home() {
 
         <Header />
 
-        <Divider />
-
         <Skills />
-
-        <Divider />
 
         <Projects />
 
-        <Divider />
-
         <Experience />
-
-        <Divider />
 
         <Education />
       </Stack>

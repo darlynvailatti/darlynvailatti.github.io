@@ -1,5 +1,5 @@
-import { Avatar, Box, Typography, Link, Stack, Grid2, useMediaQuery } from "@mui/material";
-import { House, Email } from "@mui/icons-material";
+import { Avatar, Box, Typography, Link, Stack, Grid2, useMediaQuery, Paper } from "@mui/material";
+import { House, Email, HouseRounded } from "@mui/icons-material";
 import selfie from '../assets/images/selfie.jpeg';
 import { CURRENT_LOCATION, EMAIL, GITHUB_URL, HEADER_TAGS, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL, MY_NAME } from "../common/data";
 import { SiGithub, SiLinkedin } from "react-icons/si";
@@ -54,7 +54,7 @@ export function Header() {
 
                 </Grid2>
 
-                <Grid2 container alignItems={"center"} spacing={2}
+                <Grid2 container alignItems={"end"} spacing={2}
                     textAlign={"center"}
                     justifyContent="center"
                     alignContent="center"
@@ -125,78 +125,81 @@ export function Header() {
                 xl: 12
             }}
                 alignItems={"center"}
-                alignContent={"center"}>
+                alignContent={"center"}
+                justifyContent={"space-between"}>
 
-                <Grid2 sx={{
-                    alignItems: 'center',
-                    alignContent: 'center',
-                    display: 'flex',
-                }}>
-                    <Avatar
-                        src={selfie}
-                        sx={{
-                            width: { xs: 150, md: 150 },
-                            height: { xs: 150, md: 150 },
-                            border: 5
-                        }}
-                    />
-                </Grid2>
-
-                <Grid2 container spacing={2} direction={"column"}>
-
-                    <Grid2 container alignItems={"center"} spacing={2} >
-                        <Grid2>
-                            <Typography variant="h2" component="h2" fontWeight="bold">
-                                {MY_NAME}
-                            </Typography>
-                        </Grid2>
+                <Grid2 container>
+                    <Grid2 sx={{
+                        alignItems: 'center',
+                        alignContent: 'center',
+                        display: 'flex',
+                    }}>
+                        <Avatar
+                            src={selfie}
+                            sx={{
+                                width: { xs: 150, md: 150 },
+                                height: { xs: 150, md: 150 },
+                                border: 5
+                            }}
+                        />
                     </Grid2>
 
-                    <Grid2 container alignItems={"center"} spacing={2} >
-                        <Grid2>
-                            <Typography variant="h5">{JOB_TITLE}</Typography>
+                    <Grid2 container spacing={2} direction={"column"} alignItems={"start"} justifyContent={"end"}>
+
+                        <Grid2 container alignItems={"center"} spacing={2} >
+                            <Grid2>
+                                <Typography variant="h2" component="h2" fontWeight="bold">
+                                    {MY_NAME}
+                                </Typography>
+                            </Grid2>
                         </Grid2>
-                        <Grid2>
-                            <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("linkedin_link")}>
-                                <SiLinkedin size={20} />
-                            </Link>
+
+                        <Grid2 container alignItems={"end"} spacing={2} >
+                            <Grid2>
+                                <Typography variant="h5">{JOB_TITLE}</Typography>
+                            </Grid2>
+                            <Grid2>
+                                <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("linkedin_link")}>
+                                    <SiLinkedin size={20} />
+                                </Link>
+                            </Grid2>
+                            <Grid2>
+                                <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("github_link")}>
+                                    <SiGithub size={20} />
+                                </Link>
+                            </Grid2>
                         </Grid2>
-                        <Grid2>
-                            <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("github_link")}>
-                                <SiGithub size={20} />
-                            </Link>
+
+                        <Grid2 container spacing={2} alignItems={"center"}>
+                            <Grid2>
+                                <Box display="flex" alignItems="center">
+                                    <HouseRounded sx={{ mr: 1 }} />
+                                    <Typography variant="body2">
+                                        {CURRENT_LOCATION}
+                                    </Typography>
+                                </Box>
+                            </Grid2>
+                            <Grid2>
+                                <Link href={`mailto:${EMAIL}`} underline="hover" display="flex" alignItems="center" target="_blank" rel="noopener noreferrer"
+                                    onClick={() => trackOnClick("email_link")}>
+                                    <Email sx={{ mr: 1 }} />
+                                    <Typography variant="body2">
+                                        {EMAIL}
+                                    </Typography>
+                                </Link>
+                            </Grid2>
+                            <Grid2 container>
+                                <FaPaperclip size={20} />
+                                <Link href={resume} onClick={() => trackOnClick("resume_link")}>
+                                    <Typography variant="body2">
+                                        Resume
+                                    </Typography>
+                                </Link>
+                            </Grid2>
+
                         </Grid2>
+
                     </Grid2>
-
-                    <Grid2 container spacing={2} alignItems={"center"}>
-                        <Grid2>
-                            <Box display="flex" alignItems="center">
-                                <House sx={{ mr: 1 }} />
-                                <Typography variant="body2">
-                                    {CURRENT_LOCATION}
-                                </Typography>
-                            </Box>
-                        </Grid2>
-                        <Grid2>
-                            <Link href={`mailto:${EMAIL}`} underline="hover" display="flex" alignItems="center" target="_blank" rel="noopener noreferrer"
-                                onClick={() => trackOnClick("email_link")}>
-                                <Email sx={{ mr: 1 }} />
-                                <Typography variant="body2">
-                                    {EMAIL}
-                                </Typography>
-                            </Link>
-                        </Grid2>
-                        <Grid2 container>
-                            <FaPaperclip size={20} />
-                            <Link href={resume} onClick={() => trackOnClick("resume_link")}>
-                                <Typography variant="body2">
-                                    Resume
-                                </Typography>
-                            </Link>
-                        </Grid2>
-
-                    </Grid2>
-
                 </Grid2>
 
                 <Grid2 size={{
@@ -246,10 +249,18 @@ export function Header() {
                         </Marquee>
                     </Grid2>
 
-                    <ReactMarkdown>
-                        {HEADER_TEXT}
-                    </ReactMarkdown>
-                    {/* <Typography variant="body1" mt={2} dangerouslySetInnerHTML={{ __html: HEADER_TEXT }} /> */}
+                    <Paper variant="outlined" sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                        <ReactMarkdown>
+                            {HEADER_TEXT}
+                        </ReactMarkdown>
+
+                        <Box sx={{ paddingTop: 2, paddingBottom: 2 }} >
+                            👉 Let's <a href={LINKEDIN_URL} style={{
+                                color: theme.palette.primary.main,
+                                fontWeight: 'bold'
+                            }}>connect</a> to discuss how my skills can drive innovation for your team or business!
+                        </Box>
+                    </Paper>
 
                 </Stack>
 

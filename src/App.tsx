@@ -32,8 +32,8 @@ function App() {
         palette: {
           mode,
           background: {
-            default: mode === 'dark' ? '#121212' : '#ffffff',
-            paper: mode === 'dark' ? '#1d1d1d' : '#f5f5f5',
+            default: mode === 'dark' ? '#1F1D36' : '#ffffff',
+            paper: mode === 'dark' ? '#3F3351' : '#f5f5f5',
           },
         },
         typography: {

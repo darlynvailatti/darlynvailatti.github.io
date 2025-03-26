@@ -24,7 +24,7 @@ export default function Projects() {
                     return <Grid2 key={index} size={{
                         xs: 12,
                         sm: 12,
-                        md: 4,
+                        md: PROJECTS.length > 1 ? 4 : 3,
                     }}>
 
                         <Link href={project.videoUrl} underline="none"  target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick(`${project.title}`)}>

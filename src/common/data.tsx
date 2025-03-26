@@ -21,15 +21,12 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
 export const JOB_TITLE = "💡 Software Engineer & Problem Solver";
 export const EMAIL = "darlynvailatti@gmail.com"
 export const CURRENT_LOCATION = "Adelaide, South Australia";
-export const HEADER_TEXT = `
-#### 📌 Every challenge has a solution through the power of software
+export const HEADER_TEXT = `#### 📌 Every challenge has a solution through the power of software
 
 With over **10+ years of software engineering experience** ☔️, 
 I've enhanced value creation and empowered business processes with **curiosity** and **enthusiasm**. 
 Currently pursuing a Master's in Software Engineering with a focus on **Machine Learning**, 
-I'm passionate about **matching challenges with the right tools** 🛠️
-
-👉 Let's [connect](${LINKEDIN_URL}) to discuss how my skills can drive innovation for your team or business!`
+I'm passionate about **matching challenges with the right tools** 🛠️`
 
 export const GITHUB_URL = "https://github.com/darlynvailatti"
 
@@ -183,6 +180,20 @@ export const SKILLS = [
 ]
 
 export const PROJECTS = [
+    // {
+    //     "title": "⚙️ LLmTR",
+    //     "description": "SaaS platform for data transformation using LLMs as engine. WIP",
+    //     "tags": [
+    //         <Chip label="LLM" icon={<FaMagic />} />,
+    //         <Chip label="Python" icon={<SiPython />} />,
+    //         <Chip label="React" icon={<FaReact />} />,
+    //         <Chip label="Django" icon={<SiDjango />} />,
+    //     ],
+    //     "videoUrl": "",
+    //     "startDate": "2025",
+    //     "endDate": "",
+    //     "image": llmtr
+    // },
     {
         "title": "💔 Sentiment Sense",
         "description": "Built a platform for sentiment analysis of customer reviews using a neural network with Python, Pandas, TensorFlow, and Flask to provide business insights.",
