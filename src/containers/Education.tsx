@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Chip, Divider, Grid2, Link, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, CardContent, CardHeader, Chip, Divider, Grid2, Link, Stack, Typography, useMediaQuery } from "@mui/material";
 import { CalendarMonth, PinDrop } from "@mui/icons-material";
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { useTheme } from "@emotion/react";
@@ -7,6 +7,8 @@ import {
 } from '@mui/lab/TimelineOppositeContent';
 import { EDUCATION_CHAPTERS } from "../common/data";
 import { useMemo } from "react";
+import { CustomCard } from "../components/CustomCard";
+import Globe from "./Globe";
 
 export function Education() {
     const theme: any = useTheme();
@@ -67,12 +69,37 @@ export function Education() {
                         <TimelineContent sx={{
                             paddingRight: 0,
                         }}>
-                            <Card variant="outlined" sx={{
-                                padding: 2,
-                                textAlign: 'left',
-                                margin: 1,
-                                marginRight: 0,
-                            }}>
+                            <CustomCard
+                                sx={{
+                                    padding: 2,
+                                    textAlign: 'left',
+                                    margin: 1,
+                                    marginRight: 0,
+                                    position: 'relative', // Ensure relative positioning for hover effect
+                                }}
+                            >
+                                <Box
+                                    sx={{
+                                        position: 'absolute',
+                                        top: -35,
+                                        left: "75%",
+                                        zIndex: 999,
+                                        borderRadius: 20
+                                    }}
+                                >
+
+                                    <Globe
+                                        mode="rollToLocation"
+                                        pulsePoint={{
+                                            lat: chapter.geoLocation.latitude,
+                                            lon: chapter.geoLocation.longitude,
+                                        }}
+                                        width={250}
+                                        height={250}
+                                        rotationSpeed={0.004} 
+                                        showGlobe/>
+
+                                </Box>
                                 <Stack spacing={1}>
                                     <Link href={chapter.website} target="_blank" rel="noopener noreferrer">
                                         <Typography variant="h5" fontWeight={"bold"}>{chapter.institution}</Typography>
@@ -95,7 +122,7 @@ export function Education() {
                                         ))}
                                     </Grid2>
                                 </Stack>
-                            </Card>
+                            </CustomCard>
                         </TimelineContent>
                     </TimelineItem>
                 )
@@ -107,14 +134,14 @@ export function Education() {
         return (<Stack>
             {EDUCATION_CHAPTERS.map((chapter, index) => {
                 return (
-                    <Card key={index} variant="outlined" sx={{ margin: 1 }}>
+                    <CustomCard key={index} sx={{ margin: 1 }}>
                         <CardHeader
                             avatar={chapter.icon}
                             title={<Link href={chapter.website} target="_blank" rel="noopener noreferrer">
                                 <Typography variant="body1" fontWeight={"bold"}>{chapter.institution}</Typography>
                             </Link>} subheader={chapter.title} />
 
-                        <Divider sx={{ marginLeft: -2, marginRight: -2 }} />
+                        <Divider />
 
                         <CardContent>
                             <Stack spacing={2}>
@@ -153,7 +180,7 @@ export function Education() {
                                 </Grid2>
                             </Stack>
                         </CardContent>
-                    </Card>
+                    </CustomCard>
                 )
             })}
         </Stack>)

@@ -1,13 +1,14 @@
 import { Chip, Divider, Grid2, Paper, Stack, Typography } from "@mui/material";
 import { SKILLS } from "../common/data";
 import { motion } from "framer-motion";
+import { CustomPaper } from "../components/CustomPaper";
 
 export function Skills() {
   return (
     <Stack spacing={2} textAlign={"left"}>
       <Typography variant="h5" fontWeight="bold">Skills</Typography>
 
-      <Grid2 container spacing={2}>
+      <Grid2 container spacing={3}>
 
 
         {SKILLS.map((skill, index) => (
@@ -21,10 +22,11 @@ export function Skills() {
                 scale: { type: "spring", visualDuration: 0.5, bounce: 0 },
               }}
             >
-              <Paper variant="outlined" sx={{
+              <CustomPaper sx={{
                 padding: 2,
                 display: 'flex',
-                height: '100%',
+                alignItems: "stretch",
+                minHeight: 200,
               }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" fontWeight={"bold"}>{skill.title}</Typography>
@@ -47,7 +49,7 @@ export function Skills() {
 
                   </Grid2>
                 </Stack>
-              </Paper>
+              </CustomPaper>
             </motion.div>
 
           </Grid2>

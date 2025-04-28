@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Chip, Divider, Grid2, Link, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, CardContent, CardHeader, Chip, Divider, Grid2, Link, Stack, Typography, useMediaQuery } from "@mui/material";
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -11,13 +11,85 @@ import TimelineOppositeContent, {
     timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
 import { useTheme } from "@emotion/react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { CustomCard } from "../components/CustomCard";
+import Globe from "./Globe";
 
+
+function ExperienceCard(props: { experience: any }) {
+    const [showGlobe, setShowGlobe] = useState<boolean>(false);
+    const experience = useMemo(() => props.experience, [props.experience])
+
+    return <CustomCard sx={{
+        padding: 4,
+        textAlign: 'left',
+        margin: 1,
+        marginRight: 0,
+        position: 'relative',
+    }}
+        onMouseEnter={() => {
+            setShowGlobe(true);
+        }}
+        onMouseLeave={() => {
+            setShowGlobe(false);
+        }}>
+
+        {/* Globe */}
+
+        <Box
+            sx={{
+                position: 'absolute',
+                left: "-20%",
+                zIndex: 999,
+                borderRadius: 20,
+            }}
+        >
+            <Globe
+                mode={"rollToLocation"}
+                pulsePoint={{
+                    lat: experience.geoLocation.latitude,
+                    lon: experience.geoLocation.longitude,
+                }}
+                width={250}
+                height={250}
+                showGlobe={showGlobe} />
+
+        </Box>
+
+
+        <Stack spacing={1}>
+            <Link href={experience.website} target="_blank" rel="noopener noreferrer">
+                <Typography variant="h5" fontWeight={"bold"}>{experience.company}</Typography>
+            </Link>
+            <Grid2 container spacing={1}>
+                <Grid2>
+                    <PinDrop sx={{ height: 20, width: 20 }} />
+                </Grid2>
+                <Grid2>
+                    <Typography variant="body2" fontWeight={"bold"}>{experience.location}</Typography>
+                </Grid2>
+            </Grid2>
+            <Typography variant="body1" fontWeight={"bold"}>{experience.title}</Typography>
+            <Typography variant="body2">
+                {experience.description}
+            </Typography>
+
+            <Grid2 container spacing={1}>
+                {experience.tags.map((tag: any, index: number) => (
+                    <Grid2 key={index}>
+                        <Chip label={tag} />
+                    </Grid2>
+                ))}
+            </Grid2>
+        </Stack>
+    </CustomCard>
+}
 
 export function Experience() {
 
     const theme: any = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
 
     const TimelineView = useMemo(() => () => {
         return <Timeline
@@ -29,7 +101,6 @@ export function Experience() {
                 },
             }}>
             {EXPERIENCES.map((experience, index) => {
-                const description = experience.description;
                 return (
                     <TimelineItem key={index}>
 
@@ -72,53 +143,27 @@ export function Experience() {
                         <TimelineContent sx={{
                             paddingRight: 0,
                         }}>
-                            <Card variant="outlined" sx={{
-                                padding: 2,
-                                textAlign: 'left',
-                                margin: 1,
-                                marginRight: 0,
-                            }}>
-                                <Stack spacing={1}>
-                                    <Link href={experience.website} target="_blank" rel="noopener noreferrer">
-                                        <Typography variant="h5" fontWeight={"bold"}>{experience.company}</Typography>
-                                    </Link>
-                                    <Grid2 container spacing={1}>
-                                        <Grid2>
-                                            <PinDrop sx={{ height: 20, width: 20 }} />
-                                        </Grid2>
-                                        <Grid2>
-                                            <Typography variant="body2" fontWeight={"bold"}>{experience.location}</Typography>
-                                        </Grid2>
-                                    </Grid2>
-                                    <Typography variant="body1" fontWeight={"bold"}>{experience.title}</Typography>
-                                    <Typography variant="body2">
-                                        {description}
-                                    </Typography>
-
-                                    <Grid2 container spacing={1}>
-                                        {experience.tags.map((tag, index) => (
-                                            <Grid2 key={index}>
-                                                <Chip label={tag} />
-                                            </Grid2>
-                                        ))}
-                                    </Grid2>
-                                </Stack>
-                            </Card>
+                            <ExperienceCard key={index} experience={experience} />
                         </TimelineContent>
                     </TimelineItem>
                 )
             })}
         </Timeline>
-    }, [])
+    }, []);
 
     const SmallTimelineView = useMemo(() => () => {
         return <Stack>
             {EXPERIENCES.map((experience, index) => {
                 return (
-                    <Card variant="outlined" sx={{ margin: 1 }}>
+                    <CustomCard
+                        sx={{
+                            margin: 1,
+                        }}
+                    >
+
                         <CardHeader avatar={experience.icon} title={experience.company} subheader={experience.title} />
-                        
-                        <Divider sx={{marginLeft: -2, marginRight: -2}}/>
+
+                        <Divider />
                         <CardContent>
                             <Stack key={index} spacing={2}>
                                 <Grid2 container spacing={1}>
@@ -150,11 +195,11 @@ export function Experience() {
                             </Stack>
 
                         </CardContent>
-                    </Card>
+                    </CustomCard>
                 )
             })}
         </Stack>
-    }, [])
+    }, []);
 
     return (
         <Stack spacing={1} textAlign={"left"}>

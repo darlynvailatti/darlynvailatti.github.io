@@ -35,6 +35,9 @@ function App() {
             default: mode === 'dark' ? '#1F1D36' : '#ffffff',
             paper: mode === 'dark' ? '#3F3351' : '#f5f5f5',
           },
+          secondary: {
+            main: mode === 'dark' ? '#c86bcb' : '#c86bcb',
+          }
         },
         typography: {
           fontFamily: 'Roboto',
@@ -80,7 +83,7 @@ function App() {
             zIndex: 1000,
           }}
         >
-          <ColorModeSwitcher onChange={() => colorMode.toggleColorMode()} />
+          <ColorModeSwitcher onChange={() => colorMode.toggleColorMode()}/>
         </Box>
         <CssBaseline />
         <Home />

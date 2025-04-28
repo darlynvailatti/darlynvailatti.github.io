@@ -52,6 +52,10 @@ export const EXPERIENCES = [
         "title": "Software Engineer",
         "company": "Loadsmart",
         "location": "Remote, Chicago, IL",
+        "geoLocation": {
+            "latitude": 40,
+            "longitude": -20
+        },
         "startDate": "11/2020",
         "endDate": "Present",
         "website": "https://loadsmart.com/",
@@ -64,6 +68,10 @@ export const EXPERIENCES = [
         "title": "Full-Stack Software Engineer",
         "company": "Compass UOL",
         "location": "Chapecó, SC, Brazil",
+        "geoLocation": {
+            "latitude": -27.1214077,
+            "longitude": -52.6169738
+        },
         "startDate": "10/2019",
         "endDate": "11/2020",
         "website": "https://compassuol.com.br/",
@@ -77,6 +85,10 @@ export const EXPERIENCES = [
         "title": "Full-Stack Software Engineer",
         "company": "Coop. Agroindustrial Alfa ",
         "location": "Chapecó, SC, Brazil",
+        "geoLocation": {
+            "latitude": -27.1214077,
+            "longitude": -52.6169738
+        },
         "startDate": "08/2015",
         "endDate": "10/2019",
         "website": "https://www.cooperalfa.com.br/",
@@ -89,6 +101,10 @@ export const EXPERIENCES = [
         "title": "I.T Analyst",
         "company": "Rotesma Pré-Moldados",
         "location": "Chapecó, SC, Brazil",
+        "geoLocation": {
+            "latitude": -27.1214077,
+            "longitude": -52.6169738
+        },
         "startDate": "08/2013",
         "endDate": "08/2015",
         "website": "https://www.rotesma.com.br/",
@@ -248,6 +264,10 @@ export const EDUCATION_CHAPTERS = [
         "title": "Master's in Software Engineering ML",
         "institution": "Torrens Universtiry Australia",
         "location": "Adelaide, South Australia",
+        "geoLocation": {
+            "latitude": -34.92750,
+            "longitude": 110.60000
+        },
         "startDate": "09/2023",
         "endDate": "09/2025",
         "website": "https://www.torrens.edu.au/",
@@ -263,6 +283,10 @@ export const EDUCATION_CHAPTERS = [
         "title": "Post-Graduate of Software Engineering",
         "institution": "UNISINOS",
         "location": "Porto Alegre, RS, Brazil",
+        "geoLocation": {
+            "latitude": -27.1214077,
+            "longitude": -52.6169738
+        },
         "startDate": "09/2019",
         "endDate": "04/2021",
         "website": "https://www.unisinos.br/",
@@ -277,6 +301,10 @@ export const EDUCATION_CHAPTERS = [
         "title": "Bachelor's in Information Systems ",
         "institution": "UNOESC",
         "location": "Chapecó, SC, Brazil ",
+        "geoLocation": {
+            "latitude": -27.1214077,
+            "longitude": -52.6169738
+        },
         "startDate": "02/2014",
         "endDate": "09/2017",
         "website": "https://www.unoesc.edu.br/",

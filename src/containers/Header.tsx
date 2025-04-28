@@ -1,4 +1,4 @@
-import { Avatar, Box, Typography, Link, Stack, Grid2, useMediaQuery, Paper } from "@mui/material";
+import { Avatar, Box, Typography, Link, Stack, Grid2, useMediaQuery } from "@mui/material";
 import { House, Email, HouseRounded } from "@mui/icons-material";
 import selfie from '../assets/images/selfie.jpeg';
 import { CURRENT_LOCATION, EMAIL, GITHUB_URL, HEADER_TAGS, HEADER_TEXT, JOB_TITLE, LINKEDIN_URL, MY_NAME } from "../common/data";
@@ -9,8 +9,9 @@ import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useTheme } from "@emotion/react";
 import { trackEvent } from "../analytics";
-import HeaderBackground from "./HeaderBackground";
 import ReactMarkdown from 'react-markdown';
+import { CustomPaper } from "../components/CustomPaper";
+import Globe from "./Globe";
 
 const resume = require('../assets/documents/resume.pdf');
 
@@ -41,7 +42,7 @@ export function Header() {
                     sx={{
                         width: { xs: 150, md: 150 },
                         height: { xs: 150, md: 150 },
-                        border: 5
+
                     }}
                 />
 
@@ -80,7 +81,17 @@ export function Header() {
                         display: 'flex',
                         justifyContent: 'center'
                     }}>
-                    <HeaderBackground />
+                    {/* <HeaderBackground /> */}
+                    <Globe 
+                        mode="keepRotating"
+                        rotationSpeed={0.003}
+                        pulsePoint={
+                            {
+                                lat: -35.000767,
+                                lon: 112.6111598
+                            }   
+                        }
+                        />
                 </Grid2>
 
                 <Grid2 container spacing={2} alignItems={"center"}>
@@ -139,7 +150,7 @@ export function Header() {
                             sx={{
                                 width: { xs: 150, md: 150 },
                                 height: { xs: 150, md: 150 },
-                                border: 5
+                                // border: 5
                             }}
                         />
                     </Grid2>
@@ -210,7 +221,17 @@ export function Header() {
                         display: 'flex',
                         justifyContent: 'center'
                     }}>
-                    <HeaderBackground />
+                    {/* <HeaderBackground /> */}
+                    <Globe
+                        mode="keepRotating"
+                        rotationSpeed={0.003}
+                        pulsePoint={
+                            {
+                                lat: -35.000767,
+                                lon: 112.6111598
+                            }   
+                        }
+                        />
                 </Grid2>
 
             </Grid2>
@@ -249,7 +270,7 @@ export function Header() {
                         </Marquee>
                     </Grid2>
 
-                    <Paper variant="outlined" sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                    <CustomPaper sx={{ paddingRight: 2, paddingLeft: 2 }}>
                         <ReactMarkdown>
                             {HEADER_TEXT}
                         </ReactMarkdown>
@@ -260,7 +281,7 @@ export function Header() {
                                 fontWeight: 'bold'
                             }}>connect</a> to discuss how my skills can drive innovation for your team or business!
                         </Box>
-                    </Paper>
+                    </CustomPaper>
 
                 </Stack>
 
