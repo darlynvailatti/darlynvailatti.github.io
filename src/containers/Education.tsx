@@ -89,14 +89,14 @@ export function Education() {
                                 >
 
                                     <Globe
-                                        mode="rollToLocation"
+                                        mode="keepRotating"
                                         pulsePoint={{
                                             lat: chapter.geoLocation.latitude,
                                             lon: chapter.geoLocation.longitude,
                                         }}
                                         width={250}
                                         height={250}
-                                        rotationSpeed={0.004} 
+                                        rotationSpeed={0.004}
                                         showGlobe/>
 
                                 </Box>
