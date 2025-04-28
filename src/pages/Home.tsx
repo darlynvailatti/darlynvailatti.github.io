@@ -6,7 +6,6 @@ import Projects from "../containers/Projects";
 import { Education } from "../containers/Education";
 import { useEffect } from "react";
 import { trackPageView } from "../analytics";
-import Globe from "../containers/Globe";
 
 export function Home() {
 

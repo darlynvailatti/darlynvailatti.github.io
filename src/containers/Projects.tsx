@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia, Divider, Grid2, Link, Stack, Typography, useTheme } from "@mui/material";
+import { CardContent, CardMedia, Divider, Grid2, Link, Stack, Typography, useTheme } from "@mui/material";
 import { PROJECTS } from "../common/data";
 import { useMemo } from "react";
 import { trackEvent } from "../analytics";
