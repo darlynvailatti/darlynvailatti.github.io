@@ -13,7 +13,7 @@ import TimelineOppositeContent, {
 import { useTheme } from "@emotion/react";
 import { useMemo, useState } from "react";
 import { CustomCard } from "../components/CustomCard";
-import Globe from "./Globe";
+import GlobeComponent from "./GlobeComponent";
 
 
 function ExperienceCard(props: { experience: any }) {
@@ -39,12 +39,12 @@ function ExperienceCard(props: { experience: any }) {
         <Box
             sx={{
                 position: 'absolute',
-                left: "-20%",
+                left: "-200px",
                 zIndex: 999,
                 borderRadius: 20,
             }}
         >
-            <Globe
+            <GlobeComponent
                 mode={"rollToLocation"}
                 pulsePoint={{
                     lat: experience.geoLocation.latitude,

@@ -6,9 +6,76 @@ import {
     timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
 import { EDUCATION_CHAPTERS } from "../common/data";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { CustomCard } from "../components/CustomCard";
-import Globe from "./Globe";
+import GlobeComponent from "./GlobeComponent";
+
+
+function EducationCard(props: { chapter: any }) {
+
+    const [showGlobe, setShowGlobe] = useState<boolean>(false);
+    const chapter = props.chapter;
+
+    return <CustomCard
+        sx={{
+            padding: 2,
+            textAlign: 'left',
+            margin: 1,
+            marginRight: 0,
+            position: 'relative', // Ensure relative positioning for hover effect
+        }}
+        onMouseEnter={() => {
+            setShowGlobe(true);
+        }}
+        onMouseLeave={() => {
+            setShowGlobe(false);
+        }}
+    >
+        <Box
+            sx={{
+                position: 'absolute',
+                top: -15,
+                left: "80%",
+                zIndex: 999,
+                borderRadius: 20
+            }}
+        >
+
+            <GlobeComponent
+                mode={"rollToLocation"}
+                pulsePoint={{
+                    lat: chapter.geoLocation.latitude,
+                    lon: chapter.geoLocation.longitude,
+                }}
+                width={200}
+                height={200}
+                showGlobe={showGlobe} />
+
+        </Box>
+        <Stack spacing={1}>
+            <Link href={chapter.website} target="_blank" rel="noopener noreferrer">
+                <Typography variant="h5" fontWeight={"bold"}>{chapter.institution}</Typography>
+            </Link>
+            <Grid2 container spacing={1}>
+                <Grid2>
+                    <PinDrop sx={{ height: 20, width: 20 }} />
+                </Grid2>
+                <Grid2>
+                    <Typography variant="body2" fontWeight={"bold"}>{chapter.location}</Typography>
+                </Grid2>
+            </Grid2>
+            <Typography variant="body1" fontWeight={"bold"}>{chapter.title}</Typography>
+
+            <Grid2 container spacing={1}>
+                {chapter.tags.map((tag: any, index: number) => (
+                    <Grid2 key={index}>
+                        <Chip label={tag} />
+                    </Grid2>
+                ))}
+            </Grid2>
+        </Stack>
+    </CustomCard>
+}
 
 export function Education() {
     const theme: any = useTheme();
@@ -69,60 +136,8 @@ export function Education() {
                         <TimelineContent sx={{
                             paddingRight: 0,
                         }}>
-                            <CustomCard
-                                sx={{
-                                    padding: 2,
-                                    textAlign: 'left',
-                                    margin: 1,
-                                    marginRight: 0,
-                                    position: 'relative', // Ensure relative positioning for hover effect
-                                }}
-                            >
-                                <Box
-                                    sx={{
-                                        position: 'absolute',
-                                        top: -35,
-                                        left: "75%",
-                                        zIndex: 999,
-                                        borderRadius: 20
-                                    }}
-                                >
+                            <EducationCard chapter={chapter} />
 
-                                    <Globe
-                                        mode="keepRotating"
-                                        pulsePoint={{
-                                            lat: chapter.geoLocation.latitude,
-                                            lon: chapter.geoLocation.longitude,
-                                        }}
-                                        width={250}
-                                        height={250}
-                                        rotationSpeed={0.004}
-                                        showGlobe/>
-
-                                </Box>
-                                <Stack spacing={1}>
-                                    <Link href={chapter.website} target="_blank" rel="noopener noreferrer">
-                                        <Typography variant="h5" fontWeight={"bold"}>{chapter.institution}</Typography>
-                                    </Link>
-                                    <Grid2 container spacing={1}>
-                                        <Grid2>
-                                            <PinDrop sx={{ height: 20, width: 20 }} />
-                                        </Grid2>
-                                        <Grid2>
-                                            <Typography variant="body2" fontWeight={"bold"}>{chapter.location}</Typography>
-                                        </Grid2>
-                                    </Grid2>
-                                    <Typography variant="body1" fontWeight={"bold"}>{chapter.title}</Typography>
-
-                                    <Grid2 container spacing={1}>
-                                        {chapter.tags.map((tag, index) => (
-                                            <Grid2 key={index}>
-                                                <Chip label={tag} />
-                                            </Grid2>
-                                        ))}
-                                    </Grid2>
-                                </Stack>
-                            </CustomCard>
                         </TimelineContent>
                     </TimelineItem>
                 )

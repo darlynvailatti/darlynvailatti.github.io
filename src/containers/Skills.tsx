@@ -14,14 +14,6 @@ export function Skills() {
         {SKILLS.map((skill, index) => (
 
           <Grid2 key={index} size={{ xs: 12, md: 6, sm: 6 }}>
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{
-                duration: 0.5,
-                scale: { type: "spring", visualDuration: 0.5, bounce: 0 },
-              }}
-            >
               <CustomPaper sx={{
                 padding: 2,
                 display: 'flex',
@@ -50,7 +42,6 @@ export function Skills() {
                   </Grid2>
                 </Stack>
               </CustomPaper>
-            </motion.div>
 
           </Grid2>
         ))}

@@ -11,7 +11,7 @@ import { useTheme } from "@emotion/react";
 import { trackEvent } from "../analytics";
 import ReactMarkdown from 'react-markdown';
 import { CustomPaper } from "../components/CustomPaper";
-import Globe from "./Globe";
+import GlobeComponent from "./GlobeComponent";
 
 const resume = require('../assets/documents/resume.pdf');
 
@@ -82,16 +82,16 @@ export function Header() {
                         justifyContent: 'center'
                     }}>
                     {/* <HeaderBackground /> */}
-                    <Globe 
+                    <GlobeComponent
                         mode="keepRotating"
                         rotationSpeed={0.003}
                         pulsePoint={
                             {
                                 lat: -35.000767,
                                 lon: 112.6111598
-                            }   
+                            }
                         }
-                        />
+                    />
                 </Grid2>
 
                 <Grid2 container spacing={2} alignItems={"center"}>
@@ -222,16 +222,16 @@ export function Header() {
                         justifyContent: 'center'
                     }}>
                     {/* <HeaderBackground /> */}
-                    <Globe
+                    <GlobeComponent
                         mode="keepRotating"
                         rotationSpeed={0.003}
                         pulsePoint={
                             {
                                 lat: -35.000767,
                                 lon: 112.6111598
-                            }   
+                            }
                         }
-                        />
+                    />
                 </Grid2>
 
             </Grid2>
@@ -241,51 +241,41 @@ export function Header() {
     return (
 
         <Stack spacing={2}>
-            <motion.div
-                className="box"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                    duration: 1,
-                    delay: 0.2,
-                    ease: [0, 0.71, 0.2, 1.01]
-                }}
-            >
-                <Stack sx={{}} spacing={2}>
-                    {isSmall ? <SmallHeader /> : <MediumAndLargeHeader />}
 
-                    <Grid2 size={{
-                        md: 12,
-                        xs: 12,
-                        xl: 12
-                    }}>
-                        <Marquee gradient gradientColor={theme.palette.background.default} speed={40}>
-                            <Grid2 container spacing={1} alignItems={"center"} sx={{
-                                marginRight: 1
-                            }}>
-                                {HEADER_TAGS.map((tag, index) => {
-                                    return <div key={index}>{tag}</div>
-                                })}
-                            </Grid2>
-                        </Marquee>
-                    </Grid2>
+            <Stack sx={{}} spacing={2}>
+                {isSmall ? <SmallHeader /> : <MediumAndLargeHeader />}
 
-                    <CustomPaper sx={{ paddingRight: 2, paddingLeft: 2 }}>
-                        <ReactMarkdown>
-                            {HEADER_TEXT}
-                        </ReactMarkdown>
+                <Grid2 size={{
+                    md: 12,
+                    xs: 12,
+                    xl: 12
+                }}>
+                    <Marquee gradient gradientColor={theme.palette.background.default} speed={40}>
+                        <Grid2 container spacing={1} alignItems={"center"} sx={{
+                            marginRight: 1
+                        }}>
+                            {HEADER_TAGS.map((tag, index) => {
+                                return <div key={index}>{tag}</div>
+                            })}
+                        </Grid2>
+                    </Marquee>
+                </Grid2>
 
-                        <Box sx={{ paddingTop: 2, paddingBottom: 2 }} >
-                            👉 Let's <a href={LINKEDIN_URL} style={{
-                                color: theme.palette.primary.main,
-                                fontWeight: 'bold'
-                            }}>connect</a> to discuss how my skills can drive innovation for your team or business!
-                        </Box>
-                    </CustomPaper>
+                <CustomPaper sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                    <ReactMarkdown>
+                        {HEADER_TEXT}
+                    </ReactMarkdown>
 
-                </Stack>
+                    <Box sx={{ paddingTop: 2, paddingBottom: 2 }} >
+                        👉 Let's <a href={LINKEDIN_URL} style={{
+                            color: theme.palette.primary.main,
+                            fontWeight: 'bold'
+                        }}>connect</a> to discuss how my skills can drive innovation for your team or business!
+                    </Box>
+                </CustomPaper>
 
-            </motion.div>
+            </Stack>
+
         </Stack>
     );
 }

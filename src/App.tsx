@@ -1,5 +1,5 @@
-import { Box, createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
-import { useState, createContext, useMemo } from 'react';
+import { Box, CircularProgress, createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
+import { useState, createContext, useMemo, useEffect } from 'react';
 import './App.css';
 import { Home } from './pages/Home';
 import './index.css';
@@ -12,6 +12,13 @@ export const ColorModeContext = createContext({ toggleColorMode: () => { }, mode
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [mode, setMode] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    // Simulate a delay for loading (e.g., fetching data or initializing)
+    const timer = setTimeout(() => setLoading(false), 500); // Adjust delay as needed
+    return () => clearTimeout(timer);
+  }, []);
 
   const colorMode = useMemo(
     () => ({
@@ -71,6 +78,23 @@ function App() {
       }),
     [mode]
   );
+
+  if (loading) {
+    // Display a loading spinner while the app is initializing
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          backgroundColor: mode === 'dark' ? '#1F1D36' : '#ffffff',
+        }}
+      >
+        <CircularProgress color="secondary" />
+      </Box>
+    );
+  }
 
   return (
     <ColorModeContext.Provider value={colorMode}>
