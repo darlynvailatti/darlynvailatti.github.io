@@ -5,7 +5,6 @@ import { CURRENT_LOCATION, EMAIL, GITHUB_URL, HEADER_TAGS, HEADER_TEXT, JOB_TITL
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { useMemo } from "react";
 import { FaPaperclip } from "react-icons/fa";
-import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useTheme } from "@emotion/react";
 import { trackEvent } from "../analytics";
@@ -73,27 +72,7 @@ export function Header() {
                     </Grid2>
                 </Grid2>
 
-                <Grid2 size={{
-                    xs: 12,
-                    md: 3,
-                }}
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}>
-                    {/* <HeaderBackground /> */}
-                    <GlobeComponent
-                        mode="keepRotating"
-                        rotationSpeed={0.003}
-                        pulsePoint={
-                            {
-                                lat: -35.000767,
-                                lon: 112.6111598
-                            }
-                        }
-                    />
-                </Grid2>
-
+               
                 <Grid2 container spacing={2} alignItems={"center"}>
                     <Grid2>
                         <Box display="flex" alignItems="center">

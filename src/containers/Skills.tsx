@@ -1,6 +1,5 @@
 import { Chip, Divider, Grid2, Stack, Typography } from "@mui/material";
 import { SKILLS } from "../common/data";
-import { motion } from "framer-motion";
 import { CustomPaper } from "../components/CustomPaper";
 
 export function Skills() {
