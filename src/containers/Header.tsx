@@ -41,7 +41,6 @@ export function Header() {
                     sx={{
                         width: { xs: 150, md: 150 },
                         height: { xs: 150, md: 150 },
-
                     }}
                 />
 
@@ -63,11 +62,37 @@ export function Header() {
                         <Typography variant="h5">{JOB_TITLE}</Typography>
                     </Grid2>
                     <Grid2 spacing={2} container>
-                        <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("linkedin_link")}>
-                            <SiLinkedin size={20} />
+                        <Link 
+                            href={LINKEDIN_URL} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            onClick={() => trackOnClick("linkedin_link")}
+                            sx={{
+                                color: 'inherit',
+                                transition: 'color 0.3s ease-in-out, transform 0.3s ease-in-out',
+                                '&:hover': {
+                                    color: theme.palette.secondary.main,
+                                    transform: 'scale(1.2)',
+                                },
+                            }}
+                        >
+                            <SiLinkedin size={24} />
                         </Link>
-                        <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("github_link")}>
-                            <SiGithub size={20} />
+                        <Link 
+                            href={GITHUB_URL} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            onClick={() => trackOnClick("github_link")}
+                            sx={{
+                                color: 'inherit',
+                                transition: 'color 0.3s ease-in-out, transform 0.3s ease-in-out',
+                                '&:hover': {
+                                    color: theme.palette.secondary.main,
+                                    transform: 'scale(1.2)',
+                                },
+                            }}
+                        >
+                            <SiGithub size={24} />
                         </Link>
                     </Grid2>
                 </Grid2>
@@ -104,7 +129,7 @@ export function Header() {
 
             </Stack>
         )
-    }, [trackOnClick])
+    }, [trackOnClick, theme.palette.secondary.main])
 
     const MediumAndLargeHeader = useMemo(() => () => {
         return (
@@ -114,6 +139,7 @@ export function Header() {
                 xs: 12,
                 xl: 12
             }}
+                pb={0}
                 alignItems={"center"}
                 alignContent={"center"}
                 justifyContent={"space-between"}>
@@ -129,7 +155,6 @@ export function Header() {
                             sx={{
                                 width: { xs: 150, md: 150 },
                                 height: { xs: 150, md: 150 },
-                                // border: 5
                             }}
                         />
                     </Grid2>
@@ -149,13 +174,39 @@ export function Header() {
                                 <Typography variant="h5">{JOB_TITLE}</Typography>
                             </Grid2>
                             <Grid2>
-                                <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("linkedin_link")}>
-                                    <SiLinkedin size={20} />
+                                <Link 
+                                    href={LINKEDIN_URL} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    onClick={() => trackOnClick("linkedin_link")}
+                                    sx={{
+                                        color: 'inherit',
+                                        transition: 'color 0.3s ease-in-out, transform 0.3s ease-in-out',
+                                        '&:hover': {
+                                            color: theme.palette.secondary.main,
+                                            transform: 'scale(1.2)',
+                                        },
+                                    }}
+                                >
+                                    <SiLinkedin size={24} />
                                 </Link>
                             </Grid2>
                             <Grid2>
-                                <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackOnClick("github_link")}>
-                                    <SiGithub size={20} />
+                                <Link 
+                                    href={GITHUB_URL} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    onClick={() => trackOnClick("github_link")}
+                                    sx={{
+                                        color: 'inherit',
+                                        transition: 'color 0.3s ease-in-out, transform 0.3s ease-in-out',
+                                        '&:hover': {
+                                            color: theme.palette.secondary.main,
+                                            transform: 'scale(1.2)',
+                                        },
+                                    }}
+                                >
+                                    <SiGithub size={24} />
                                 </Link>
                             </Grid2>
                         </Grid2>
@@ -215,13 +266,15 @@ export function Header() {
 
             </Grid2>
         )
-    }, [trackOnClick])
+    }, [trackOnClick, theme.palette.secondary.main])
 
     return (
 
         <Stack spacing={2}>
 
-            <Stack sx={{}} spacing={2}>
+            <Stack sx={{}} spacing={4}>
+
+                <Stack spacing={0}>
                 {isSmall ? <SmallHeader /> : <MediumAndLargeHeader />}
 
                 <Grid2 size={{
@@ -239,17 +292,37 @@ export function Header() {
                         </Grid2>
                     </Marquee>
                 </Grid2>
+                </Stack>
 
-                <CustomPaper sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                <CustomPaper sx={{ 
+                    padding: { xs: 2, sm: 3, md: 4 },
+                    transition: 'all 0.3s ease-in-out',
+                }}>
                     <ReactMarkdown>
                         {HEADER_TEXT}
                     </ReactMarkdown>
 
-                    <Box sx={{ paddingTop: 2, paddingBottom: 2 }} >
-                        👉 Let's <a href={LINKEDIN_URL} style={{
-                            color: theme.palette.primary.main,
-                            fontWeight: 'bold'
-                        }}>connect</a> to discuss how my skills can drive innovation for your team or business!
+                    <Box sx={{ 
+                        paddingTop: { xs: 2, sm: 3 },
+                        paddingBottom: { xs: 2, sm: 3 },
+                    }} >
+                        👉 Let's <Link 
+                            href={LINKEDIN_URL} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                                color: theme.palette.secondary.main,
+                                fontWeight: 'bold',
+                                textDecoration: 'none',
+                                transition: 'opacity 0.3s ease-in-out',
+                                '&:hover': {
+                                    opacity: 0.8,
+                                    textDecoration: 'underline',
+                                },
+                            }}
+                        >
+                            connect
+                        </Link> to discuss how my skills can drive innovation for your team or business!
                     </Box>
                 </CustomPaper>
 

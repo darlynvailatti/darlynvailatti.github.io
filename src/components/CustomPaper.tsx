@@ -8,10 +8,12 @@ export interface CustomPaperProps extends PaperProps {
 }
 
 const HoverablePaper = styled(Paper)<{ hoverShadow?: string }>(({ theme, hoverShadow }) => ({
-  willChange: 'box-shadow', // Hint to the browser for optimization
+  willChange: 'box-shadow, transform',
   boxShadow: "none",
+  transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out',
   '&:hover': {
     boxShadow: hoverShadow,
+    transform: 'translateY(-2px)',
   },
 }));
 

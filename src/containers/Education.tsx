@@ -18,11 +18,12 @@ function EducationCard(props: { chapter: any }) {
 
     return <CustomCard
         sx={{
-            padding: 2,
+            padding: { xs: 2, sm: 2.5, md: 3 },
             textAlign: 'left',
             margin: 1,
             marginRight: 0,
-            position: 'relative', // Ensure relative positioning for hover effect
+            position: 'relative',
+            transition: 'all 0.3s ease-in-out',
         }}
         onMouseEnter={() => {
             setShowGlobe(true);
@@ -37,7 +38,9 @@ function EducationCard(props: { chapter: any }) {
                 top: -15,
                 left: "80%",
                 zIndex: 999,
-                borderRadius: 20
+                borderRadius: 20,
+                transition: 'opacity 0.3s ease-in-out',
+                opacity: showGlobe ? 1 : 0,
             }}
         >
 
@@ -52,24 +55,59 @@ function EducationCard(props: { chapter: any }) {
                 showGlobe={showGlobe} />
 
         </Box>
-        <Stack spacing={1}>
-            <Link href={chapter.website} target="_blank" rel="noopener noreferrer">
-                <Typography variant="h5" fontWeight={"bold"}>{chapter.institution}</Typography>
+        <Stack spacing={2}>
+            <Link 
+                href={chapter.website} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                sx={{
+                    textDecoration: 'none',
+                    '&:hover': {
+                        textDecoration: 'underline',
+                    },
+                }}
+            >
+                <Typography 
+                    variant="h5" 
+                    fontWeight={"bold"}
+                    sx={{
+                        color: 'primary.main',
+                        transition: 'color 0.3s ease-in-out',
+                        '&:hover': {
+                            color: 'secondary.main',
+                        },
+                    }}
+                >
+                    {chapter.institution}
+                </Typography>
             </Link>
-            <Grid2 container spacing={1}>
+            <Grid2 container spacing={1} alignItems="center">
                 <Grid2>
-                    <PinDrop sx={{ height: 20, width: 20 }} />
+                    <PinDrop sx={{ height: 20, width: 20, color: 'text.secondary' }} />
                 </Grid2>
                 <Grid2>
-                    <Typography variant="body2" fontWeight={"bold"}>{chapter.location}</Typography>
+                    <Typography variant="body2" fontWeight={"bold"} color="text.secondary">
+                        {chapter.location}
+                    </Typography>
                 </Grid2>
             </Grid2>
-            <Typography variant="body1" fontWeight={"bold"}>{chapter.title}</Typography>
+            <Typography variant="body1" fontWeight={"bold"}>
+                {chapter.title}
+            </Typography>
 
             <Grid2 container spacing={1}>
                 {chapter.tags.map((tag: any, index: number) => (
                     <Grid2 key={index}>
-                        <Chip label={tag} />
+                        <Chip 
+                            label={tag} 
+                            size="small"
+                            sx={{
+                                transition: 'transform 0.2s ease-in-out',
+                                '&:hover': {
+                                    transform: 'scale(1.05)',
+                                },
+                            }}
+                        />
                     </Grid2>
                 ))}
             </Grid2>
@@ -146,30 +184,49 @@ export function Education() {
     }, []);
 
     const TimelineViewMobile = useMemo(() => () => {
-        return (<Stack>
+        return (<Stack spacing={2}>
             {EDUCATION_CHAPTERS.map((chapter, index) => {
                 return (
-                    <CustomCard key={index} sx={{ margin: 1 }}>
+                    <CustomCard key={index} sx={{ margin: 0 }}>
                         <CardHeader
                             avatar={chapter.icon}
-                            title={<Link href={chapter.website} target="_blank" rel="noopener noreferrer">
-                                <Typography variant="body1" fontWeight={"bold"}>{chapter.institution}</Typography>
-                            </Link>} subheader={chapter.title} />
+                            title={
+                                <Link 
+                                    href={chapter.website} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    sx={{
+                                        textDecoration: 'none',
+                                        color: 'primary.main',
+                                        '&:hover': {
+                                            textDecoration: 'underline',
+                                        },
+                                    }}
+                                >
+                                    <Typography variant="body1" fontWeight={"bold"}>
+                                        {chapter.institution}
+                                    </Typography>
+                                </Link>
+                            } 
+                            subheader={chapter.title} 
+                        />
 
-                        <Divider />
+                        <Divider sx={{ opacity: 0.3 }} />
 
                         <CardContent>
                             <Stack spacing={2}>
 
                                 <Grid2 container spacing={1}>
 
-                                    <Chip label={
-                                        <Typography
-                                            variant={"caption"}
-                                            fontWeight={"bold"}>
-                                            {chapter.startDate}
-                                        </Typography>}
-                                        size="small" icon={<CalendarMonth />}
+                                    <Chip 
+                                        label={
+                                            <Typography
+                                                variant={"caption"}
+                                                fontWeight={"bold"}>
+                                                {chapter.startDate}
+                                            </Typography>}
+                                        size="small" 
+                                        icon={<CalendarMonth />}
                                     />
 
                                     <Chip
@@ -178,18 +235,30 @@ export function Education() {
                                                 fontWeight={"bold"}>
                                                 {chapter.endDate}
                                             </Typography>}
-                                        size="small" icon={<CalendarMonth />}
+                                        size="small" 
+                                        icon={<CalendarMonth />}
                                     />
                                 </Grid2>
                                 <Box display={"flex"} alignItems={"center"}>
-                                    <PinDrop sx={{ height: 20, width: 20 }} />
-                                    <Typography variant="body2">{chapter.location}</Typography>
+                                    <PinDrop sx={{ height: 20, width: 20, color: 'text.secondary', mr: 1 }} />
+                                    <Typography variant="body2" color="text.secondary">
+                                        {chapter.location}
+                                    </Typography>
                                 </Box>
 
                                 <Grid2 container spacing={1}>
                                     {chapter.tags.map((tag, index) => (
                                         <Grid2 key={index}>
-                                            <Chip label={tag} />
+                                            <Chip 
+                                                label={tag} 
+                                                size="small"
+                                                sx={{
+                                                    transition: 'transform 0.2s ease-in-out',
+                                                    '&:hover': {
+                                                        transform: 'scale(1.05)',
+                                                    },
+                                                }}
+                                            />
                                         </Grid2>
                                     ))}
                                 </Grid2>
@@ -202,9 +271,17 @@ export function Education() {
     }, []);
 
     return (
-        <Stack spacing={2} textAlign={"left"}>
+        <Stack spacing={{ xs: 3, sm: 4 }} textAlign={"left"}>
 
-            <Typography variant="h5" fontWeight="bold">Education</Typography>
+            <Typography 
+                variant="h4" 
+                fontWeight="bold"
+                sx={{
+                    marginBottom: { xs: 1, sm: 2 },
+                }}
+            >
+                Education
+            </Typography>
 
             {isMobile ? <TimelineViewMobile /> : <TimelineView />}
 

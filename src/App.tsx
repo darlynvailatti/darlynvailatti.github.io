@@ -80,7 +80,6 @@ function App() {
   );
 
   if (loading) {
-    // Display a loading spinner while the app is initializing
     return (
       <Box
         sx={{

@@ -1,6 +1,5 @@
-import { Container, Stack } from "@mui/material";
+import { Container, Stack, Box } from "@mui/material";
 import { Header } from "../containers/Header";
-import { Skills } from "../containers/Skills";
 import { Experience } from "../containers/Experience";
 import Projects from "../containers/Projects";
 import { Education } from "../containers/Education";
@@ -18,19 +17,38 @@ export function Home() {
     });
   }, [location.pathname, location.search]);
 
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   return (
-    <Container maxWidth="lg" sx={{ padding: "30px" }}>
-      <Stack spacing={2}>
+    <Container 
+      maxWidth="lg" 
+      sx={{ 
+        padding: { xs: "20px", sm: "30px", md: "30px" },
+        paddingTop: { xs: "20px", sm: "30px", md: "50px" },
+        paddingBottom: { xs: "40px", sm: "50px", md: "60px" },
+      }}
+    >
+      <Stack spacing={{ xs: 4, sm: 5, md: 4 }}>
+        <Box id="header" sx={{ scrollMarginTop: "80px" }}>
+          <Header />
+        </Box>
 
-        <Header />
+        <Box id="experience" sx={{ scrollMarginTop: "80px" }}>
+          <Experience />
+        </Box>
 
-        <Skills />
+        <Box id="projects" sx={{ scrollMarginTop: "80px" }}>
+          <Projects />
+        </Box>
 
-        <Projects />
-
-        <Experience />
-
-        <Education />
+        <Box id="education" sx={{ scrollMarginTop: "80px" }}>
+          <Education />
+        </Box>
       </Stack>
     </Container>
   );

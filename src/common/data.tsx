@@ -1,6 +1,6 @@
-import { SiAmazonwebservices, SiArduino, SiCelery, SiDatadog, SiDjango, SiDocker, SiFlask, SiGitlab, SiJenkins, SiJinja, SiJupyter, SiKubernetes, SiMlflow, SiNumpy, SiPandas, SiPython, SiRabbitmq, SiRaspberrypi, SiReact, SiScikitlearn, SiSpring, SiTensorflow, SiTerraform, SiVuedotjs } from "react-icons/si";
+import { SiAmazonwebservices, SiArduino, SiCelery, SiDatadog, SiDjango, SiDocker, SiFlask, SiGitlab, SiJenkins, SiJira, SiJinja, SiJupyter, SiKubernetes, SiMlflow, SiNumpy, SiPandas, SiPython, SiRabbitmq, SiRaspberrypi, SiReact, SiScikitlearn, SiSpring, SiTensorflow, SiTerraform, SiVuedotjs } from "react-icons/si";
 import DefaultIcon from "../components/DefaultIcon";
-import { FaChartLine, FaCircleNotch, FaCode, FaJava, FaLayerGroup, FaWifi } from "react-icons/fa";
+import { FaChartLine, FaCircleNotch, FaCode, FaDatabase, FaJava, FaLayerGroup, FaServer, FaUser, FaWifi } from "react-icons/fa";
 import CustomIcon from "./CustomIcon";
 
 import loadsmart_logo from '../assets/images/loadsmart_logo.png';
@@ -13,20 +13,21 @@ import torrens_logo from '../assets/images/torrens_logo.jpg';
 import speedapp_image from '../assets/images/speedapp_image.png';
 import climbing_image from '../assets/images/climbing_image.png';
 import sentiment_sense_image from '../assets/images/sentiment_sense_image.png';
+import shippo_logo from '../assets/images/shippo_logo.png';
 import { Chip } from "@mui/material";
 import { ThreeDRotation } from "@mui/icons-material";
 
 export const MY_NAME = "Darlyn Anderson Vailatti"
 export const LINKEDIN_URL = "https://www.linkedin.com/in/darlynvailatti/"
-export const JOB_TITLE = "💡 Software Engineer & Problem Solver";
+export const JOB_TITLE = "💡 Senior Software Engineer & Problem Solver";
 export const EMAIL = "darlynvailatti@gmail.com"
 export const CURRENT_LOCATION = "Adelaide, South Australia";
-export const HEADER_TEXT = `#### 📌 Every challenge has a solution through the power of software
-
-With over **10+ years of software engineering experience** ☔️, 
-I've enhanced value creation and empowered business processes with **curiosity** and **enthusiasm**. 
-Currently pursuing a Master's in Software Engineering with a focus on **Machine Learning**, 
-I'm passionate about **matching challenges with the right tools** 🛠️`
+export const HEADER_TEXT = `With over **10+ years of experience** designing and scaling **distributed systems**, 
+I have a strong track record in **logistics, finance, and high-throughput integration platforms**. 
+Skilled in building **resilient services**, automating workflows, and integrating complex systems. 
+Recently graduated from a **Master’s in Software Engineering** with a focus on **Machine Learning and Neural Networks**.
+I enjoy working on real-world problems and contributing to scalable, maintainable solutions,
+particularly within backend and infrastructure-focused teams. 🛠️`
 
 export const GITHUB_URL = "https://github.com/darlynvailatti"
 
@@ -49,18 +50,52 @@ export const HEADER_TAGS = [
 
 export const EXPERIENCES = [
     {
-        "title": "Software Engineer",
+        "title": "Backend Software Engineer",
+        "company": "Shippo",
+        "location": "San Francisco, CA, US",
+        "geoLocation": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        },
+        "startDate": "11/2025",
+        "endDate": "Present",
+        "website": "https://shippo.com/",
+        "description": "Building a **distributed integration platform** to enable carriers, shippers, and customers to stay connected. Focused on designing and implementing scalable solutions that facilitate seamless communication and data flow across the shipping ecosystem.",
+        "icon": <CustomIcon src={shippo_logo} />,
+        "skills": [
+            { component: SiPython, name: "Python" },
+            { component: SiAmazonwebservices, name: "AWS" },
+            { component: SiKubernetes, name: "Kubernetes" },
+            { component: SiTerraform, name: "Terraform" },
+            { component: FaChartLine, name: "Agile" },
+            { component: SiJira, name: "Jira" },
+        ],
+        "tags": [
+        ]
+    },
+    {
+        "title": "Full-Stack Software Engineer",
         "company": "Loadsmart",
-        "location": "Remote, Chicago, IL",
+        "location": "Remote, US, Illinois, Chicago",
         "geoLocation": {
             "latitude": 40,
             "longitude": -20
         },
         "startDate": "11/2020",
-        "endDate": "Present",
+        "endDate": "11/2025",
         "website": "https://loadsmart.com/",
-        "description": "Software development focused on complex system integrations utilizing Python frameworks like Django (ORM, REST) and message brokers (Celery, Redis, RabbitMQ). Implemented integrations using diverse protocols (REST, SOAP, EDI, SFTP) to seamlessly connect various systems. Enhanced system performance and visibility through instrumentation and monitoring with tools such as Datadog. Leveraged AWS cloud infrastructure using IaC tools (Terraform) to ensure scalability and reliability.  Additionally, possess expertise in front-end development using React, creating user-friendly interfaces.  One of my main achievements was building a self-service integration onboarding system. This empowered high-level users to integrate applications independently, resulting in a significant reduction in operational costs.",
+        "description": "Technical research, implementation and evolution of a high-throughput integration broker platform, maintaining and scaling a system that processes **7M+ logistics messages monthly** and supports **1500+ active integrations** across carriers, shippers, and partners. Built a **CLI tool** that empowered engineers to define, test and deploy integrations using **infrastructure-as-code**, significantly improving developer productivity. Enabled robust interoperability across **FTP, SFTP, AS2, HTTP protocols** and **X12, XML, JSON, CSV content types**, over **RESTful and SOAP channels**. Improved observability and performance using **Datadog, Kubernetes, and AWS**, supporting reliable scaling under increasing demand. Delivered a **self-service onboarding tool** built with **React**, enabling non-technical users to configure integrations independently, reducing operational costs and support effort.",
         "icon": <CustomIcon src={loadsmart_logo} />,
+        "skills": [
+            { component: SiPython, name: "Python" },
+            { component: SiReact, name: "React" },
+            { component: SiAmazonwebservices, name: "AWS" },
+            { component: SiKubernetes, name: "Kubernetes" },
+            { component: SiDatadog, name: "Datadog" },
+            { component: SiTerraform, name: "Terraform" },
+            { component: FaChartLine, name: "Agile" },
+            { component: SiJira, name: "Jira" },
+        ],
         "tags": [
         ]
     },
@@ -75,8 +110,15 @@ export const EXPERIENCES = [
         "startDate": "10/2019",
         "endDate": "11/2020",
         "website": "https://compassuol.com.br/",
-        "description": "Architected and developed robust API integrations utilizing a microservices architecture. This approach ensured scalability, maintainability, and independent deployment of our services. Utilized Vue.js and Javascript to craft highly performant and interactive front-end experiences. Implemented  Test-Driven Development (TDD) practices using Ruby, ensuring high code quality. Further extended my automation expertise by applying Gherkin syntax for comprehensive testing of our React Native mobile app.",
+        "description": "Designed and developed integration services around a reward platform used by **100k+ customers**, building and maintaining **30+ system integrations** to extend platform capabilities. Implemented solutions using **Spring Boot** within a **microservices architecture**, ensuring scalability, resilience, and independent deployment across distributed systems. Contributed to front-end functionality using **Vue.js**, enhancing partner and internal user experiences.",
         "icon": <CustomIcon src={compass_logo} />,
+        "skills": [
+            { component: SiSpring, name: "Spring Boot" },
+            { component: SiVuedotjs, name: "Vue.js" },
+            { component: FaJava, name: "Java" },
+            { component: FaChartLine, name: "Agile" },
+            { component: SiJira, name: "Jira" },
+        ],
         "tags": [
 
         ]
@@ -92,14 +134,20 @@ export const EXPERIENCES = [
         "startDate": "08/2015",
         "endDate": "10/2019",
         "website": "https://www.cooperalfa.com.br/",
-        "description": "Developed and maintained JavaEE applications (Spring, JPA) for logistics and financial business solutions, including TMS and ERP systems. Focused on improving efficiency and streamlining operations. Built a centralized logistics platform that managed freight for over 150+ branches, resulting in a 20% reduction in costs. Additionally, implemented DevOps practices (CI/CD pipeline) to improve software delivery speed and reliability.",
+        "description": "Developed and maintained **JavaEE applications** using **Spring and JPA** for logistics and financial domains, including **TMS and ERP systems**. Built a centralized logistics platform managing freight operations for **150+ branches**, achieving a **20% cost reduction** through improved coordination and automation. Introduced and implemented **CI/CD pipelines**, significantly enhancing software delivery speed, reliability, and deployment consistency.",
         "icon": <CustomIcon src={cooperalfa_logo} />,
+        "skills": [
+            { component: FaJava, name: "Java" },
+            { component: SiSpring, name: "Spring" },
+            { component: SiJenkins, name: "Jenkins" },
+            { component: FaChartLine, name: "Agile" },
+        ],
         "tags": [
         ]
     },
     {
         "title": "I.T Analyst",
-        "company": "Rotesma Pré-Moldados",
+        "company": "Rotesma Pré-fabricados",
         "location": "Chapecó, SC, Brazil",
         "geoLocation": {
             "latitude": -27.1214077,
@@ -108,8 +156,15 @@ export const EXPERIENCES = [
         "startDate": "08/2013",
         "endDate": "08/2015",
         "website": "https://www.rotesma.com.br/",
-        "description": "Managed a comprehensive ERP system encompassing HR, Industrial Manufacturing, Labor Safety, CRM, and Accounting modules. Developed insightful BI reports using SQL and tools like iReport, enabling data-driven decision making. Doubled as a Business Analyst, bridging the gap between business needs and IT solutions. Additionally, oversaw the local IT infrastructure as the IT Manager, ensuring smooth operation of networks and databases. My main achievement was the implementation of an industrial tracking system that empowered operations to accurately track each piece of production along the assembly line.",
+        "description": "Managed a full-scale **ERP system** (HR, Manufacturing, CRM, Accounting), supporting cross-functional business operations. Delivered **BI reports** using **SQL and iReport**, enabling informed decision-making. Bridged business and technical teams as a **Business Analyst**, and oversaw local IT infrastructure. Implemented an **industrial tracking system** to monitor production flow with precision, boosting operational efficiency.",
         "icon": <CustomIcon src={rotesma_logo} />,
+        "skills": [
+            { component: FaJava, name: "Java" },
+            { component: FaDatabase, name: "SQL" },
+            { component: FaChartLine, name: "Business Intelligence" },
+            { component: FaUser, name: "Business Analyst" },
+            { component: FaServer, name: "Server Management" },
+        ],
         "tags": [
 
         ]
@@ -119,7 +174,7 @@ export const EXPERIENCES = [
 export const SKILLS = [
     {
         "title": "⌱ Full-Stack Software Development",
-        "description": "Expertise in designing, developing, and maintaining scalable web applications using a wide range of technologies. Proficient in both front-end and back-end development, ensuring seamless integration of complex systems. Emphasis on creating user-friendly interfaces and implementing best practices for code quality and maintainability.",
+        "description": "Experience in designing, developing, and maintaining scalable web applications using a wide range of technologies. Skilled in both front-end and back-end development, with a focus on integrating complex systems. Emphasis on creating user-friendly interfaces and implementing best practices for code quality and maintainability.",
 
         "tools": [
             <DefaultIcon component={SiPython} name="Python" />,
@@ -138,7 +193,7 @@ export const SKILLS = [
     },
     {
         "title": "⎈ DevOps and Cloud Infrastructure",
-        "description": "Implementation and maintenance of CI/CD pipelines to enhance software delivery speed and reliability. Extensive experience leveraging cloud services to ensure scalability and reliability of software solutions. Proficient in setting up automated testing environments and integrating diverse systems to improve operational performance.",
+        "description": "Implementation and maintenance of CI/CD pipelines to enhance software delivery speed and reliability. Experience leveraging cloud services to support scalability and reliability of software solutions. Skilled in setting up automated testing environments and integrating diverse systems to improve operational performance.",
         "tools": [
             <DefaultIcon component={SiTerraform} name="Terraform" />,
             <DefaultIcon component={SiDocker} name="Docker" />,
@@ -177,7 +232,7 @@ export const SKILLS = [
     },
     {
         "title": "⎌ Systems Integration and Automation",
-        "description": "Proficient in integrating various business systems and automating workflows to improve efficiency and reduce operational costs. Capable of building custom solutions for complex system integrations and enabling smooth data flow across platforms.",
+        "description": "Experience integrating various business systems and automating workflows to improve efficiency and reduce operational costs. Skilled in building custom solutions for complex system integrations and enabling smooth data flow across platforms.",
         "tools": [
             <DefaultIcon component={SiPython} name="Python" />,
             <DefaultIcon component={FaJava} name="Java" />,
@@ -230,7 +285,7 @@ export const PROJECTS = [
     },
     {
         "title": "🧗 Climbing AR",
-        "description": "Gamify indoor climbing. Software and hardware development of a platform to gamify indoor climbing using machine learning through video capturing.",
+        "description": "Software and hardware development of a platform to gamify indoor climbing using machine learning through video capturing.",
         "tags": [
             <Chip label="Machine Learning" icon={<SiMlflow />} />,
             <Chip label="React" icon={<SiReact />} />,
@@ -244,7 +299,7 @@ export const PROJECTS = [
     },
     {
         "title": "⚡️ SpeedApp",
-        "description": "Athletic measurement platform. Software and Hardware development of a platform for collecting, managing and test sports teams with photoelectric sensors, with Python, Django, and other technologies ",
+        "description": "Software and Hardware development of a platform for collecting, managing and test sports teams with photoelectric sensors, with Python, Django, and other technologies",
         "tags": [
             <Chip label="Python" icon={<SiPython />} />,
             <Chip label="IoT" icon={<FaWifi />} />,
@@ -262,21 +317,19 @@ export const PROJECTS = [
 export const EDUCATION_CHAPTERS = [
     {
         "title": "Master's in Software Engineering ML",
-        "institution": "Torrens Universtiry Australia",
+        "institution": "Torrens University Australia",
         "location": "Adelaide, South Australia",
         "geoLocation": {
             "latitude": -34.92750,
             "longitude": 110.60000
         },
-        "startDate": "09/2023",
-        "endDate": "09/2025",
+        "startDate": "2023",
+        "endDate": "2025",
         "website": "https://www.torrens.edu.au/",
         "icon": <CustomIcon src={torrens_logo} />,
         "tags": [
             "Machine Learning",
-            "Data Analysis",
-            "Software Development",
-            "Research"
+            "Data Analysis"
         ]
     },
     {
@@ -287,14 +340,13 @@ export const EDUCATION_CHAPTERS = [
             "latitude": -27.1214077,
             "longitude": -52.6169738
         },
-        "startDate": "09/2019",
-        "endDate": "04/2021",
+        "startDate": "2019",
+        "endDate": "2021",
         "website": "https://www.unisinos.br/",
         "icon": <CustomIcon src={unisinos_logo} />,
         "tags": [
-            "Software Architecture",
-            "System Analysis",
-            "Project Management"
+            "Architecture",
+            "Agile"
         ]
     },
     {
@@ -305,15 +357,13 @@ export const EDUCATION_CHAPTERS = [
             "latitude": -27.1214077,
             "longitude": -52.6169738
         },
-        "startDate": "02/2014",
-        "endDate": "09/2017",
+        "startDate": "2014",
+        "endDate": "2017",
         "website": "https://www.unoesc.edu.br/",
         "icon": <CustomIcon src={unoesc_logo} />,
         "tags": [
-            "Software Development",
-            "Data Sctructures",
-            "Programming Marathon",
-            "System Analysis"
+            "Computer Science",
+            "Programming Marathon"
         ]
     }
 ]
