@@ -3,6 +3,7 @@ import { Header } from "../containers/Header";
 import { Experience } from "../containers/Experience";
 import Projects from "../containers/Projects";
 import { Education } from "../containers/Education";
+import { Navigation } from "../components/Navigation";
 import { useEffect } from "react";
 import { trackPageView } from "../analytics";
 
@@ -28,11 +29,12 @@ export function Home() {
     <Container 
       maxWidth="lg" 
       sx={{ 
-        padding: { xs: "20px", sm: "30px", md: "30px" },
-        paddingTop: { xs: "20px", sm: "30px", md: "50px" },
+
+
         paddingBottom: { xs: "40px", sm: "50px", md: "60px" },
       }}
     >
+      <Navigation />
       <Stack spacing={{ xs: 4, sm: 5, md: 4 }}>
         <Box id="header" sx={{ scrollMarginTop: "80px" }}>
           <Header />

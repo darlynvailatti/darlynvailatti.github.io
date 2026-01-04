@@ -60,10 +60,12 @@ export const EXPERIENCES = [
         "startDate": "11/2025",
         "endDate": "Present",
         "website": "https://shippo.com/",
-        "description": "Building a **distributed integration platform** to enable carriers, shippers, and customers to stay connected. Focused on designing and implementing scalable solutions that facilitate seamless communication and data flow across the shipping ecosystem.",
+        "description": "Hired for my experience designing and scaling **integration platforms**, I am contributing to the development of an **agnostic, recipe-driven enterprise integration platform** that will replace a **legacy adapter-based architecture**. The platform is being built to support **high-throughput e-commerce and freight workflows**, connecting **shippers, carriers, and customers** through a **unified, scalable integration layer**. I am working primarily with **Python and Django**, using **Celery** for asynchronous processing, and deploying services on **AWS and Kubernetes**. My focus is on **platform scalability, reliability, and observability**, with **New Relic** used to monitor performance and ensure stability as the platform scales.",
         "icon": <CustomIcon src={shippo_logo} />,
         "skills": [
             { component: SiPython, name: "Python" },
+            { component: SiDjango, name: "Django" },
+            { component: SiCelery, name: "Celery" },
             { component: SiAmazonwebservices, name: "AWS" },
             { component: SiKubernetes, name: "Kubernetes" },
             { component: SiTerraform, name: "Terraform" },
