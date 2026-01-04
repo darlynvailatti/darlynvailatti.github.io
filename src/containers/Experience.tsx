@@ -16,6 +16,80 @@ import { CustomCard } from "../components/CustomCard";
 import GlobeComponent from "./GlobeComponent";
 import ReactMarkdown from 'react-markdown';
 
+function calculateDuration(startDate: string, endDate: string): { value: number; unit: string } {
+    const parseDate = (dateStr: string): Date => {
+        if (dateStr === "Present") {
+            return new Date();
+        }
+        const [month, year] = dateStr.split('/');
+        return new Date(parseInt(year), parseInt(month) - 1, 1);
+    };
+
+    const start = parseDate(startDate);
+    const end = parseDate(endDate);
+    
+    const monthsDiff = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    
+    if (monthsDiff < 12) {
+        return { value: monthsDiff, unit: 'months' };
+    } else {
+        const years = monthsDiff / 12;
+        return { value: Math.round(years * 10) / 10, unit: 'years' };
+    }
+}
+
+function ExperienceDuration(props: { startDate: string; endDate: string; variant?: 'mobile' | 'desktop' }) {
+    const { startDate, endDate, variant = 'desktop' } = props;
+    const duration = calculateDuration(startDate, endDate);
+
+    const isMobile = variant === 'mobile';
+
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-end',
+                justifyContent: isMobile ? 'center' : 'flex-start',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                pointerEvents: 'none',
+            }}
+        >
+            <Typography
+                component="span"
+                sx={{
+                    fontSize: isMobile 
+                        ? { xs: '2rem', sm: '2.5rem', md: '3rem' }
+                        : { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
+                    fontWeight: 900,
+                    lineHeight: 1,
+                    color: 'secondary.main',
+                    letterSpacing: '-0.02em',
+                }}
+            >
+                {duration.value}
+            </Typography>
+            <Typography
+                variant="caption"
+                sx={{
+                    fontSize: isMobile 
+                        ? { xs: '0.65rem', sm: '0.75rem' }
+                        : { xs: '0.7rem', sm: '0.8rem' },
+                    fontWeight: 600,
+                    color: isMobile ? 'text.primary' : 'text.secondary',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    mt: 0.25,
+                }}
+            >
+                {duration.unit}
+            </Typography>
+        </Box>
+    );
+}
+
 
 function ExpandableExperienceCard(props: { experience: any }) {
     const [expanded, setExpanded] = useState<boolean>(false);
@@ -36,22 +110,29 @@ function ExpandableExperienceCard(props: { experience: any }) {
             <CardHeader 
                 avatar={experience.icon} 
                 title={
-                    <Link 
-                        href={experience.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        sx={{
-                            textDecoration: 'none',
-                            color: 'primary.main',
-                            '&:hover': {
-                                textDecoration: 'underline',
-                            },
-                        }}
-                    >
-                        {experience.company}
-                    </Link>
+                    <Box sx={{ position: 'relative', pr: { xs: 8, sm: 10 } }}>
+                        <Link 
+                            href={experience.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            sx={{
+                                textDecoration: 'none',
+                                color: 'primary.main',
+                                '&:hover': {
+                                    textDecoration: 'underline',
+                                },
+                            }}
+                        >
+                            {experience.company}
+                        </Link>
+                        <ExperienceDuration 
+                            startDate={experience.startDate} 
+                            endDate={experience.endDate} 
+                            variant="mobile"
+                        />
+                    </Box>
                 } 
-                subheader={experience.title} 
+                subheader={experience.title}
             />
 
             <Divider sx={{ opacity: 0.3 }} />
@@ -188,31 +269,38 @@ function ExperienceCard(props: { experience: any; isMobile?: boolean }) {
 
 
         <Stack spacing={2}>
-            <Link 
-                href={experience.website} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                sx={{
-                    textDecoration: 'none',
-                    '&:hover': {
-                        textDecoration: 'underline',
-                    },
-                }}
-            >
-                <Typography 
-                    variant="h5" 
-                    fontWeight={"bold"}
+            <Box sx={{ position: 'relative', pr: { xs: 12, sm: 14, md: 16 } }}>
+                <Link 
+                    href={experience.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     sx={{
-                        color: 'primary.main',
-                        transition: 'color 0.3s ease-in-out',
+                        textDecoration: 'none',
                         '&:hover': {
-                            color: 'secondary.main',
+                            textDecoration: 'underline',
                         },
                     }}
                 >
-                    {experience.company}
-                </Typography>
-            </Link>
+                    <Typography 
+                        variant="h5" 
+                        fontWeight={"bold"}
+                        sx={{
+                            color: 'primary.main',
+                            transition: 'color 0.3s ease-in-out',
+                            '&:hover': {
+                                color: 'secondary.main',
+                            },
+                        }}
+                    >
+                        {experience.company}
+                    </Typography>
+                </Link>
+                <ExperienceDuration 
+                    startDate={experience.startDate} 
+                    endDate={experience.endDate} 
+                    variant="desktop"
+                />
+            </Box>
             <Grid2 container spacing={1} alignItems="center">
                 <Grid2>
                     <PinDrop sx={{ height: 20, width: 20, color: 'text.secondary' }} />
