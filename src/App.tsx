@@ -101,7 +101,7 @@ function App() {
         <Box
           sx={{
             position: 'fixed',
-            top: 16,
+            top: { xs: 80, md: 16 },
             right: 16,
             zIndex: 1000,
           }}

@@ -58,7 +58,7 @@ export function Navigation() {
       sx={{
         position: "sticky",
         top: 0,
-        zIndex: 999,
+        zIndex: 1001,
         backgroundColor: theme.palette.background.default,
         backdropFilter: "blur(10px)",
         borderBottom: `1px solid ${theme.palette.mode === "dark" ? "rgba(200, 107, 203, 0.2)" : "rgba(0, 0, 0, 0.1)"}`,
