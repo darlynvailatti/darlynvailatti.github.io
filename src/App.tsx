@@ -1,5 +1,6 @@
 import { Box, CircularProgress, createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
 import { useState, createContext, useMemo, useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 import { Home } from './pages/Home';
 import './index.css';
@@ -96,22 +97,24 @@ function App() {
   }
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <Box
-          sx={{
-            position: 'fixed',
-            top: { xs: 80, md: 16 },
-            right: 16,
-            zIndex: 1000,
-          }}
-        >
-          <ColorModeSwitcher onChange={() => colorMode.toggleColorMode()}/>
-        </Box>
-        <CssBaseline />
-        <Home />
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    <HelmetProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <Box
+            sx={{
+              position: 'fixed',
+              top: { xs: 80, md: 16 },
+              right: 16,
+              zIndex: 1000,
+            }}
+          >
+            <ColorModeSwitcher onChange={() => colorMode.toggleColorMode()}/>
+          </Box>
+          <CssBaseline />
+          <Home />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </HelmetProvider>
   );
 }
 
